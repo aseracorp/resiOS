@@ -40,14 +40,6 @@ const pages = {
             adminOnly: true            
         },
         {
-            id: 'constellation',
-            title: 'Constellation',
-            type: 'item',
-            url: '/cosmos-ui/constellation',
-            icon: () => <img height="28px" width="28px" style={{marginLeft: "-6px"}} src={ConstellationIcon} />,
-            
-        },
-        {
             id: 'users',
             title: 'Users',
             type: 'item',
