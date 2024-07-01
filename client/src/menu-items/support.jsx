@@ -1,5 +1,5 @@
 // assets
-import { GithubOutlined, QuestionOutlined, BugOutlined } from '@ant-design/icons';
+import { GithubOutlined, QuestionOutlined, BugOutlined, MailOutlined } from '@ant-design/icons';
 import DiscordOutlined from '../assets/images/icons/discord.svg'
 import DiscordOutlinedWhite from '../assets/images/icons/discord_white.svg'
 import { useTheme } from '@mui/material/styles';
@@ -24,7 +24,7 @@ const support = {
             title: 'Helpdesk (E-Mail)',
             type: 'item',
             url: 'mailto:support@asera.ch',
-            icon: GithubOutlined,
+            icon: MailOutlined,
             external: true,
             target: true
         },
@@ -39,7 +39,7 @@ const support = {
         },
         {
             id: 'documentation',
-            title: 'Documentation',
+            title: 'Cosmos-Docs',
             type: 'item',
             url: 'https://cosmos-cloud.io/doc',
             icon: QuestionOutlined,
