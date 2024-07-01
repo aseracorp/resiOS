@@ -21,5 +21,5 @@ docker build \
   --platform linux/arm64 \
   .
 
-docker push aseracorp/resiOS:$VERSION-arm64
-docker push aseracorp/resiOS:$LATEST-arm64
+docker push aseracorp/resios:$VERSION-arm64
+docker push aseracorp/resios:$LATEST-arm64

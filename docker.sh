@@ -17,7 +17,7 @@ sh build.sh
 # Multi-architecture build
 docker buildx build \
   --platform linux/amd64,linux/arm64 \
-  --tag aseracorp/resiOS:$VERSION \
-  --tag aseracorp/resiOS:$LATEST \
+  --tag aseracorp/resios:$VERSION \
+  --tag aseracorp/resios:$LATEST \
   --push \
   .
