@@ -32,14 +32,6 @@ const pages = {
             icon: icons.NodeExpandOutlined,
         },
         {
-            id: 'storage',
-            title: 'Storage',
-            type: 'item',
-            url: '/cosmos-ui/storage',
-            icon: icons.FolderOutlined,
-            adminOnly: true            
-        },
-        {
             id: 'users',
             title: 'Users',
             type: 'item',

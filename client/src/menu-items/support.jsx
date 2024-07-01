@@ -20,11 +20,11 @@ const support = {
     type: 'group',
     children: [
         {
-            id: 'discord',
-            title: 'Discord',
+            id: 'helpdesk',
+            title: 'Helpdesk (E-Mail)',
             type: 'item',
-            url: 'https://discord.com/invite/PwMWwsrwHA',
-            icon: DiscordOutlinedIcon,
+            url: 'mailto:support@asera.ch',
+            icon: GithubOutlined,
             external: true,
             target: true
         },

@@ -149,3 +149,4 @@ workflows:
               only:
                 - master
                 - unstable
+                - localisation
