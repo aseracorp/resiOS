@@ -9,6 +9,7 @@ const icons = {
     SettingOutlined,
     FolderOutlined
 };
+
 // ==============================|| MENU ITEMS - EXTRA PAGES ||============================== //
 
 const pages = {
@@ -49,7 +50,7 @@ const pages = {
         },
         {
             id: 'cron',
-            title: 'Scheduler',
+            title: 'CronScheduler',
             type: 'item',
             url: '/cosmos-ui/cron',
             icon: ClockCircleOutlined,

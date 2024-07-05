@@ -14,8 +14,10 @@ import { ValidateRoute, getFaviconURL, sanitizeRoute } from '../../utils/routes'
 import HostChip from '../../components/hostChip';
 import { Formik, useFormik } from 'formik';
 import * as yup from 'yup';
+import { useTranslation } from 'react-i18next';
 
 const OpenIdEditModal = ({ clientId, openNewModal, setOpenNewModal, config, onSubmit }) => {
+  const { t } = useTranslation();
   const [submitErrors, setSubmitErrors] = useState([]);
   const [newRoute, setNewRoute] = useState(null);
 
@@ -57,7 +59,7 @@ const OpenIdEditModal = ({ clientId, openNewModal, setOpenNewModal, config, onSu
                       fullWidth
                       id="redirect"
                       name="redirect"
-                      label="Redirect"
+                      label={t('Redirect')}
                       value={formik.values.redirect}
                       onChange={formik.handleChange}
                       error={formik.touched.redirect && Boolean(formik.errors.redirect)}
@@ -72,10 +74,10 @@ const OpenIdEditModal = ({ clientId, openNewModal, setOpenNewModal, config, onSu
                     return <div>{err}</div>
                   })}</Alert>
                 </Stack>}
-                <Button onClick={() => setOpenNewModal(false)}>Cancel</Button>
+                <Button onClick={() => setOpenNewModal(false)}>{t('Cancel')}</Button>
                 <Button color="primary" variant="contained" type="submit" onClick={() => {
                   formik.handleSubmit();
-                }}>{clientId ? "Edit" : "Create"}</Button>
+                }}>{clientId ? t('Edit') : t('Create')}</Button>
               </DialogActions>
             </>}
           </form>

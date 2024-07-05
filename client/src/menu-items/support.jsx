@@ -1,8 +1,15 @@
 // assets
 import { GithubOutlined, QuestionOutlined, BugOutlined, MailOutlined } from '@ant-design/icons';
-import DiscordOutlined from '../assets/images/icons/discord.svg'
-import DiscordOutlinedWhite from '../assets/images/icons/discord_white.svg'
 import { useTheme } from '@mui/material/styles';
+
+/* //i18next
+import { useTranslation, Trans } from 'react-i18next';
+const { t } = useTranslation();
+
+//translate visible text
+const helpDiscussions = "{t('Help & Discussions')}";
+const documentation = "{t('Documentation')}";
+const bug = "{t('Found a Bug?')}"; */
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE & DOCUMENTATION ||============================== //
 
@@ -20,10 +27,10 @@ const support = {
     type: 'group',
     children: [
         {
-            id: 'helpdesk',
-            title: 'Helpdesk (E-Mail)',
+            id: 'discussions',
+            title: 'HelpDiscussion',
             type: 'item',
-            url: 'mailto:support@asera.ch',
+            url: 'https://github.com/aseracorp/resiOS/discussions',
             icon: MailOutlined,
             external: true,
             target: true
@@ -39,7 +46,7 @@ const support = {
         },
         {
             id: 'documentation',
-            title: 'Cosmos-Docs',
+            title: 'Documentation',
             type: 'item',
             url: 'https://cosmos-cloud.io/doc',
             icon: QuestionOutlined,
@@ -50,7 +57,7 @@ const support = {
             id: 'bug',
             title: 'Found a Bug?',
             type: 'item',
-            url: 'https://github.com/aseracorp/resiOS/issues/new/choose',
+            url: 'https://github.com/aseracorp/resiOS/issues',
             icon: BugOutlined,
             external: true,
             target: true

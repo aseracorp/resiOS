@@ -1,6 +1,14 @@
 // assets
 import { HomeOutlined, AppstoreOutlined, DashboardOutlined, AppstoreAddOutlined } from '@ant-design/icons';
 
+/* //i18next
+import { useTranslation, Trans } from 'react-i18next';
+const { t } = useTranslation();
+
+//translate visible text
+const monitoring = "{t('Monitoring')}";
+const market = "{t('Market')}"; */
+
 // icons
 const icons = {
     HomeOutlined

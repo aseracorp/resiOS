@@ -8,8 +8,10 @@ import * as timeago from 'timeago.js';
 import { ExclamationOutlined, SettingOutlined } from "@ant-design/icons";
 import { Alert } from "@mui/material";
 import { DownloadFile } from "../../api/downloadButton";
+import { useTranslation } from 'react-i18next';
 
 const EventsExplorer = ({from, to, xAxis, zoom, slot, initLevel, initSearch = ''}) => {
+	const { t } = useTranslation();
 	const [events, setEvents] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [search, setSearch] = useState(initSearch);
@@ -118,7 +120,7 @@ const EventsExplorer = ({from, to, xAxis, zoom, slot, initLevel, initSearch = ''
 				<div>
 					<Button variant='contained' onClick={() => {
 						refresh("");
-					}} style={{height: '42px'}}>Refresh</Button>
+					}} style={{height: '42px'}}>{t('Refresh')}</Button>
 				</div>
 				<div>
 					<DownloadFile filename='events-export.json' content={
@@ -154,10 +156,10 @@ const EventsExplorer = ({from, to, xAxis, zoom, slot, initLevel, initSearch = ''
 						}}
 					/>
 				</div>
-				<TextField fullWidth value={search} onChange={(e) => setSearch(e.target.value)} placeholder='Search (text or bson)' />
+				<TextField fullWidth value={search} onChange={(e) => setSearch(e.target.value)} placeholder={t('SearchTextBson')} />
 			</Stack>
 			<div>
-			{total} events found from {from.toLocaleString()} to {to.toLocaleString()}
+			{total} {t('eventsFoundFrom')} {from.toLocaleString()} {t('to')} {to.toLocaleString()}
 			</div>
 			<div>
 				{events && <Stack spacing={1}>

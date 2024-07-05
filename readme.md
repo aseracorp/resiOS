@@ -1,3 +1,5 @@
-This is a fork of [Cosmos Server](https://github.com/aseracorp/resiOS) optimized for the RESI T4 and C4.
+Unofficial OS for RESI T4 and C4 based on [Cosmos Server](https://github.com/azukaar/Cosmos-Server).
 
-All of the Credits go to the original Project: [Cosmos Server](https://github.com/aseracorp/resiOS)
+Use at your own risk!
+
+All of the Credits go to the original Project: [Cosmos Server](https://github.com/azukaar/Cosmos-Server)

@@ -15,6 +15,7 @@ import { useClientInfos } from "../../utils/hooks";
 import { FormaterForMetric, formatDate } from "../dashboard/components/utils";
 import MiniPlotComponent from "../dashboard/components/mini-plot";
 import Migrate014 from "./migrate014";
+import { useTranslation } from 'react-i18next';
 
 
 export const HomeBackground = () => {
@@ -83,6 +84,7 @@ export const TransparentHeader = () => {
 }
 
 const HomePage = () => {
+    const { t } = useTranslation();
     const { routeName } = useParams();
     const [servApps, setServApps] = useState([]);
     const [config, setConfig] = useState(null);
@@ -185,7 +187,6 @@ const HomePage = () => {
 
     const primCol = theme.palette.primary.main.replace('rgb(', 'rgba(')
     const secCol = theme.palette.secondary.main.replace('rgb(', 'rgba(')
-
     const optionsRadial = {
         plotOptions: {
             radialBar: {
@@ -364,8 +365,8 @@ const HomePage = () => {
                             <Stack direction="row" justifyContent={'space-between'} alignItems={'center'} style={{ height: "100%" }}>
                                 <Stack style={{paddingLeft: '20px'}} spacing={0}>
                                     <div style={{fontSize: '18px', fontWeight: "bold"}}>RAM</div>
-                                    <div>avail.: -</div>
-                                    <div>used: -</div>
+                                    <div>{t('avail')}: -</div>
+                                    <div>{t('used')}: -</div>
                                 </Stack>
                                 <div style={{height: '97px'}}>
                                     -
@@ -396,7 +397,7 @@ const HomePage = () => {
                                 <Stack style={{paddingLeft: '20px'}} spacing={0}>
                                 <div style={{fontSize: '18px', fontWeight: "bold"}}>CPU</div>
                                 <div>{coStatus.CPU}</div>
-                                <div>{coStatus.AVX ? "AVX Supported" : "No AVX Support"}</div>
+                                <div>{coStatus.AVX ? t('AVXSupported') : t('NoAVXSupport')}</div>
                                 </Stack>
                                 <div style={{height: '97px'}}>
                                     <Chart
@@ -418,8 +419,8 @@ const HomePage = () => {
                             <Stack direction="row" justifyContent={'space-between'} alignItems={'center'} style={{ height: "100%" }}>
                                 <Stack style={{paddingLeft: '20px'}} spacing={0}>
                                     <div style={{fontSize: '18px', fontWeight: "bold"}}>RAM</div>
-                                    <div>avail.: <strong>{maxRAM}</strong></div>
-                                    <div>used: <strong>{latestRAM}</strong></div>
+                                    <div>{t('avail')}: <strong>{maxRAM}</strong></div>
+                                    <div>{t('used')}: <strong>{latestRAM}</strong></div>
                                 </Stack>
                                 <div style={{height: '97px'}}>
                                     <Chart
@@ -439,12 +440,12 @@ const HomePage = () => {
                     <Grid2 item xs={12} sm={6} md={6} lg={3} xl={3} xxl={3} key={'001'}>
                         <Box className='app' style={{height: '106px',borderRadius: 5, ...appColor }}>
                         <Stack direction="row" justifyContent={'center'} alignItems={'center'} style={{ height: "100%" }}>
-                            <MiniPlotComponent noBackground title='NETWORK' agglo metrics={[
+                            <MiniPlotComponent noBackground title={t('NETWORK')} agglo metrics={[
                                 "cosmos.system.netTx",
                                 "cosmos.system.netRx",
                             ]} labels={{
-                                ["cosmos.system.netTx"]: "trs:", 
-                                ["cosmos.system.netRx"]: "rcv:"
+                                ["cosmos.system.netTx"]: t('trs')+":", 
+                                ["cosmos.system.netRx"]: t('rcv')+":"
                             }}/>
                         </Stack>
                         </Box>
@@ -518,8 +519,8 @@ const HomePage = () => {
                     <Box style={{ padding: 10, borderRadius: 5, ...appColor }}>
                         <Stack direction="row" spacing={2} alignItems="center">
                             <div style={{ minWidth: 0 }}>
-                                <h3 style={blockStyle}>No Apps</h3>
-                                <p style={blockStyle}>You have no apps configured. Please add some apps in the configuration panel.</p>
+                                <h3 style={blockStyle}>{t('NoApps')}</h3>
+                                <p style={blockStyle}>{t('NoAppsLong')}</p>
                             </div>
                         </Stack>
                     </Box>
