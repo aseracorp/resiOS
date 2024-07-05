@@ -29,6 +29,7 @@ import PrettyTableView from '../../components/tableView/prettyTableView';
 import { DeleteButton } from '../../components/delete';
 import { CosmosCheckbox, CosmosFormDivider, CosmosInputText, CosmosSelect } from '../config/users/formShortcuts';
 import ResponsiveButton from '../../components/responseiveButton';
+import { useTranslation } from 'react-i18next';
 
 const AlertValidationSchema = Yup.object().shape({
   name: Yup.string().required('Name is required'),
@@ -39,6 +40,7 @@ const AlertValidationSchema = Yup.object().shape({
 });
 
 const EditSourcesModal = ({ onSave }) => {
+  const { t } = useTranslation();
   const [config, setConfig] = React.useState(null);
   const [open, setOpen] = React.useState(false);
   
@@ -112,8 +114,8 @@ const EditSourcesModal = ({ onSave }) => {
         <DialogContent>
           <Stack spacing={2}>
             <Alert severity="info" style={{ margin: '0 20px 20px 20px' }}>
-              This allows you to add additional 3rd party Cosmos app-markets to the market. <br />
-              To find new sources,  <a href="https://github.com/azukaar/awesome-cosmos-cloud" target="_blank">start here</a>
+              {t('InfoSources1')} <br />
+              {t('InfoSources2')}  <a href="https://github.com/azukaar/awesome-cosmos-cloud" target="_blank">{t('InfoSources3')}</a>
             </Alert>
             {formik.values.sources && formik.values.sources
             .map((action, index) => {
@@ -168,13 +170,13 @@ const EditSourcesModal = ({ onSave }) => {
                   },
                 ]);
               }}>
-              Add Source
+              {t('AddSource')}
             </Button>
           </Stack>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpen(false)}>Cancel</Button>
-          <Button variant='contained' type="submit" disabled={formik.isSubmitting || !formik.isValid}>Save</Button>
+          <Button onClick={() => setOpen(false)}>{t('Cancel')}</Button>
+          <Button variant='contained' type="submit" disabled={formik.isSubmitting || !formik.isValid}>{t('Save')}</Button>
         </DialogActions>
       </form>
       </FormikProvider>}
@@ -185,7 +187,7 @@ const EditSourcesModal = ({ onSave }) => {
       variant="outlined"
       startIcon={<ContainerOutlined />}
       onClick={() => setOpen(true)}
-    >Sources</ResponsiveButton>
+    >{t('Sources')}</ResponsiveButton>
     </>
   );
 };
