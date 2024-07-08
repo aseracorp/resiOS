@@ -11,8 +11,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/creack/pty"
 	"github.com/gorilla/websocket"
-
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS/src/utils"
 )
 
 const timeoutDuration = 2 * time.Minute

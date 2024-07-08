@@ -7,7 +7,7 @@ import (
 	"bufio"
 	"os/exec"
 
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS/src/utils"
 )
 
 type FormatDiskJSON struct {

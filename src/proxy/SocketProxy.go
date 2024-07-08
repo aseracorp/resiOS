@@ -10,8 +10,8 @@ import (
     "time"
 
 
-    "github.com/azukaar/cosmos-server/src/utils"
-    "github.com/azukaar/cosmos-server/src/docker"
+	"github.com/aseracorp/resiOS/src/docker"
+	"github.com/aseracorp/resiOS/src/utils"
 )
 
 var (
@@ -39,16 +39,16 @@ func handleClient(client net.Conn, server net.Conn, proxyInfo *ProxyInfo) {
     defer client.Close()
     defer server.Close()
 
-    // Forward data between client and server, and watch for stop signal
-    done := make(chan struct{})
-    go func() {
-        io.Copy(server, client)
-        done <- struct{}{}
-    }()
-    go func() {
-        io.Copy(client, server)
-        done <- struct{}{}
-    }()
+	// Forward data between client and server, and watch for stop signal
+	done := make(chan struct{})
+	go func() {
+		io.Copy(server, client)
+		done <- struct{}{}
+	}()
+	go func() {
+		io.Copy(client, server)
+		done <- struct{}{}
+	}()
 
     select {
     case <-proxyInfo.stop:
@@ -252,10 +252,10 @@ func handleUDPResponse(packetConn net.PacketConn, clientAddr net.Addr, targetAdd
 }
 
 type PortsPair struct {
-    From string
-    To string
-    isHTTPProxy bool
-    route utils.ProxyRouteConfig
+	From        string
+	To          string
+	isHTTPProxy bool
+	route       utils.ProxyRouteConfig
 }
 
 func initInternalPortProxy(ports []PortsPair) {
@@ -276,17 +276,17 @@ func initInternalPortProxy(ports []PortsPair) {
 
 // Helper function to check if a slice contains a string
 func contains(slice []string, item string) bool {
-    for _, a := range slice {
-        if a == item {
-            return true
-        }
-    }
-    return false
+	for _, a := range slice {
+		if a == item {
+			return true
+		}
+	}
+	return false
 }
 
 func StopAllProxies() {
-    proxiesLock.Lock()
-    defer proxiesLock.Unlock()
+	proxiesLock.Lock()
+	defer proxiesLock.Unlock()
 
     var wg sync.WaitGroup
     for port, proxyInfo := range activeProxies {
@@ -334,7 +334,7 @@ func InitInternalSocketProxy() {
 
 	targetPort := HTTPPort
 
-    allowHTTPLocal := config.HTTPConfig.AllowHTTPLocalIPAccess
+	allowHTTPLocal := config.HTTPConfig.AllowHTTPLocalIPAccess
 
 	if isHTTPS {
 		targetPort = HTTPSPort
@@ -383,12 +383,12 @@ func InitInternalSocketProxy() {
                 
                 portpair := PortsPair{sourceHostname, destination, isHTTPProxy, route}
 
-                if isHTTPProxy && allowHTTPLocal && utils.IsLocalIP(route.Host) {
-                    portpair.To = HTTPPort
-                }
+				if isHTTPProxy && allowHTTPLocal && utils.IsLocalIP(route.Host) {
+					portpair.To = HTTPPort
+				}
 
-    			expectedPorts = append(expectedPorts, portpair)
-            }
+				expectedPorts = append(expectedPorts, portpair)
+			}
 		}
 	}
 
