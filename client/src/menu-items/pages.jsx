@@ -32,22 +32,6 @@ const pages = {
             icon: icons.NodeExpandOutlined,
         },
         {
-            id: 'storage',
-            title: 'MenuStorage',
-            type: 'item',
-            url: '/resios-ui/storage',
-            icon: icons.FolderOutlined,
-            adminOnly: true            
-        },
-        {
-            id: 'constellation',
-            title: 'MenuConstellation',
-            type: 'item',
-            url: '/resios-ui/constellation',
-            icon: () => <img height="28px" width="28px" style={{marginLeft: "-6px"}} src={ConstellationIcon} />,
-            
-        },
-        {
             id: 'users',
             title: 'Users',
             type: 'item',

@@ -1,7 +1,5 @@
 // assets
-import { GithubOutlined, QuestionOutlined, BugOutlined } from '@ant-design/icons';
-import DiscordOutlined from '../assets/images/icons/discord.svg'
-import DiscordOutlinedWhite from '../assets/images/icons/discord_white.svg'
+import { MessageOutlined, GithubOutlined, QuestionOutlined, BugOutlined } from '@ant-design/icons';
 import { useTheme } from '@mui/material/styles';
 
 // ==============================|| MENU ITEMS - SAMPLE PAGE & DOCUMENTATION ||============================== //
@@ -20,11 +18,11 @@ const support = {
     type: 'group',
     children: [
         {
-            id: 'discord',
-            title: 'Discord',
+            id: 'helpDiscussion',
+            title: 'HelpDiscussion',
             type: 'item',
-            url: 'https://discord.com/invite/PwMWwsrwHA',
-            icon: DiscordOutlinedIcon,
+            url: 'https://github.com/aseracorp/resiOS/discussions',
+            icon: MessageOutlined,
             external: true,
             target: true
         },
