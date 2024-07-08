@@ -22,7 +22,7 @@ const StorageIndex = () => {
   const isAdmin = role === "2";
 
   return <div>
-    <PrettyTabbedView path="/cosmos-ui/storage/:tab" tabs={[
+    <PrettyTabbedView path="/resios-ui/storage/:tab" tabs={[
         {
           title: t('mgmt.storage.disks'),
           children: <StorageDisks />,
