@@ -2,7 +2,7 @@ package main
 
 import (
 	// "encoding/json"
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS/src/utils"
 	
 	_ "github.com/rclone/rclone/backend/all"   // import all backends
 	_ "github.com/rclone/rclone/fs/operations" // import operations/* rc commands
