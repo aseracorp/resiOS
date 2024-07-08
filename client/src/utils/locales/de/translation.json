@@ -38,15 +38,12 @@
   "HelpDiscussion": "Hilfe & Forum",
   "Documentation": "Dokumentation",
   "Found a Bug?": "Fehler gefunden?",
-  "TooltipAllowHTTPLocalIPAccess": "Wenn HTTPS zusammen mit einer Domain verwendet wird, ist es je nach Netzwerkkonfiguration möglich, dass Ihr Server keine direkten lokalen Verbindungen empfängt. <br />Mit dieser Option können Sie auch über Ihre lokale IP-Adresse auf Ihren resiOS-Admin zugreifen, wie ip:port. <br />Sie können bereits ip:port-URLs für Ihre Anwendungen erstellen,<strong>aber dies macht sie zu HTTP-only</strong>.",
   "SkipPruneNetwork": "Netzwerke nicht bereinigen",
   "SkipPruneImages": "Images nicht bereinigen",
   "DefaultDataPath": "Standard-Installationspfad",
   "Security": "Sicherheit",
   "CoutryBlacklistIsWhitelist": "Liste als Whitelist anstelle einer Blacklist verwenden",
-  "WarningAllowHTTPLocalIPAccess": "Diese Option wird nicht empfohlen, da sie Ihren Server den Sicherheitsrisiken in Ihrem lokalen Netzwerk aussetzt.<br />Ihr lokales Netzwerk ist sicherer als das Internet, aber nicht sicher, da Geräte wie IoTs, Smart-TVs, Smartphones oder sogar Ihr Router kompromittiert werden können.<br /><strong>Wenn Sie einen sicheren Offline-/Nur-Lokal-Zugang zu einem Server haben möchten, der einen Domänennamen und HTTPS verwendet, sollten Sie stattdessen Constellation verwenden.</strong>",
-  "AllowHTTPLocalIPAccess": "Unsicheren Zugriff über lokale IP zulassen",
-  "HostnameLogin": "Hostname: Dies wird verwendet, um den Zugang zu Ihrem resiOS-Server zu beschränken (Ihre IP oder Ihr Domainname)",
+  "HostnameLogin": "Hostname: Dies wird verwendet, um den Zugang zu Ihrem Cosmos-Server zu beschränken (Ihre IP oder Ihr Domainname)",
   "Save": "Speichern",
   "HostnameRequired": "Hostname ist erforderlich",
   "LoglevelRequired": "Logging-Level ist erforderlich",
@@ -618,5 +615,6 @@
   "RestartVPNService": "VPN-Service neustarten",
   "ShowVPNLogs": "VPN-Protokolle anzeigen",
   "ShowVPNConfig": "VPN-Konfiguration anzeigen",
-  "DNSBlocklists": "DNS Blocklisten"
+  "DNSBlocklists": "DNS Blocklisten",
+  "EditSources": "Quellen bearbeiten"
 }

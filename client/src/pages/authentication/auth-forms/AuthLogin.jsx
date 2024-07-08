@@ -194,7 +194,7 @@ const AuthLogin = () => {
                                         label={<Typography variant="h6">Keep me sign in</Typography>}
                                     />*/}
                                     {showResetPassword && <Link variant="h6" component={RouterLink} to="/resios-ui/forgot-password" color="primary">
-                                        Forgot Your Password?
+                                        {t('ForgotPassword?')}
                                     </Link>}
                                     {!showResetPassword &&  <Typography variant="h6">
                                         {t('PasswordResetNotAllowed')}

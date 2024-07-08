@@ -107,7 +107,7 @@ const EditSourcesModal = ({ onSave }) => {
 
   return (<>
     <Dialog open={open} onClose={() => setOpen(false)} maxWidth="sm" fullWidth>
-      <DialogTitle>Edit Sources</DialogTitle>
+      <DialogTitle>{t('EditSources')}</DialogTitle>
         
       {config && <FormikProvider value={formik}>
       <form onSubmit={formik.handleSubmit}>
