@@ -20,7 +20,7 @@ const ConstellationIndex = () => {
   const isAdmin = role === "2";
 
   return isAdmin ? <div>
-    <PrettyTabbedView path="/cosmos-ui/constellation/:tab" tabs={[
+    <PrettyTabbedView path="/resios-ui/constellation/:tab" tabs={[
         {
           title: 'VPN',
           children: <ConstellationVPN />,
