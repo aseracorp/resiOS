@@ -10,7 +10,7 @@ import (
 	"github.com/holoplot/go-avahi"
 	"github.com/miekg/dns"
 
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS/src/utils"
 )
 
 /**
