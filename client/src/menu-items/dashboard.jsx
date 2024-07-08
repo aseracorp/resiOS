@@ -17,7 +17,7 @@ const dashboard = {
             id: 'home',
             title: 'Home',
             type: 'item',
-            url: '/cosmos-ui/',
+            url: '/resios-ui/',
             icon: icons.HomeOutlined,
             breadcrumbs: false
         },
@@ -25,7 +25,7 @@ const dashboard = {
             id: 'dashboard',
             title: 'Monitoring',
             type: 'item',
-            url: '/cosmos-ui/monitoring',
+            url: '/resios-ui/monitoring',
             icon: DashboardOutlined,
             breadcrumbs: false,
             adminOnly: true
@@ -34,7 +34,7 @@ const dashboard = {
             id: 'market',
             title: 'Market',
             type: 'item',
-            url: '/cosmos-ui/market-listing',
+            url: '/resios-ui/market-listing',
             icon: AppstoreAddOutlined,
             breadcrumbs: false
         },

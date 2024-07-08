@@ -61,7 +61,7 @@ const Migrate014 = ({ config }) => {
           {isSubmitted ? ((isSubmitted == 2) ?
           <DialogContent>
             <DialogContentText>
-              Migration successful! Your Cosmos instance will now restart in Host Mode.
+              Migration successful! Your resiOS instance will now restart in Host Mode.
               Refresh the page to see the changes (it might take a few minutes!).
               if you are experiencing issues, please check the logs for more information.
             </DialogContentText>
@@ -79,20 +79,20 @@ const Migrate014 = ({ config }) => {
           : 
           <DialogContent>
             <DialogContentText>
-              In order to continue to improve your experience, Cosmos now supports the Host Mode of networking.
-              It will be the recommended way to run your Cosmos container from now on. <strong>If you are using Windows or MacOS do not do this, it's not compatible</strong> (you can disable this warning in the config file).
+              In order to continue to improve your experience, resiOS now supports the Host Mode of networking.
+              It will be the recommended way to run your resiOS container from now on. <strong>If you are using Windows or MacOS do not do this, it's not compatible</strong> (you can disable this warning in the config file).
               <br />Example of how it makes your life easier:
               <ul>
                 <li>You will be able to connect to other services using localhost</li>
-                <li>You won't need all the cosmos-network anymore to connect to containers</li>
+                <li>You won't need all the resiOS-network anymore to connect to containers</li>
                 <li>You can see all your server's networking data in the monitoring tab (not just the docker data)</li>
                 <li>Docker-compose imported container will work out-of-the-box</li>
                 <li>Remove the docker overhead (small performance gain) and ensure Docker does not meddle with IP information</li>
                 <li>Faster boot time (no bootstrapping of containers needed)</li>
               </ul>
-              Cosmos can automatically migrate to the host mode, but before you do so, please confirm what ports you want to use with Cosmos (default are 80/443).
-              The reason why we ask you to do this is that the host mode will use your server's network directly, not the docker virtual network. This means your port redirection (ex. -p 80:8080) will not be there anymore, and you need to tell Cosmos what ports to actually use directly. This form will save the settings for you and start the migration.
-              If you have very customized Cosmos networking settings (ex. macvlan), the auto migration will not work, and you will need to do it manually.
+              resiOS can automatically migrate to the host mode, but before you do so, please confirm what ports you want to use with resiOS (default are 80/443).
+              The reason why we ask you to do this is that the host mode will use your server's network directly, not the docker virtual network. This means your port redirection (ex. -p 80:8080) will not be there anymore, and you need to tell resiOS what ports to actually use directly. This form will save the settings for you and start the migration.
+              If you have very customized resiOS networking settings (ex. macvlan), the auto migration will not work, and you will need to do it manually.
               <br />
               <br />
             </DialogContentText>

@@ -5,14 +5,14 @@ import (
 	"time"
 	"context"
 
-	"github.com/azukaar/cosmos-server/src/docker"
-	"github.com/azukaar/cosmos-server/src/utils"
-	"github.com/azukaar/cosmos-server/src/authorizationserver"
-	"github.com/azukaar/cosmos-server/src/market"
-	"github.com/azukaar/cosmos-server/src/constellation"
-	"github.com/azukaar/cosmos-server/src/metrics"
-	"github.com/azukaar/cosmos-server/src/storage"
-	"github.com/azukaar/cosmos-server/src/cron"
+	"github.com/aseracorp/resiOS-server/src/docker"
+	"github.com/aseracorp/resiOS-server/src/utils"
+	"github.com/aseracorp/resiOS-server/src/authorizationserver"
+	"github.com/aseracorp/resiOS-server/src/market"
+	"github.com/aseracorp/resiOS-server/src/constellation"
+	"github.com/aseracorp/resiOS-server/src/metrics"
+	"github.com/aseracorp/resiOS-server/src/storage"
+	"github.com/aseracorp/resiOS-server/src/cron"
 )
 
 func main() {

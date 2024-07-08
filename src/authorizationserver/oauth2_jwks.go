@@ -7,7 +7,7 @@ import (
 	"math/big"
 	"crypto/rsa"
 	
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS-server/src/utils"
 )
 
 type JsonWebKey struct {

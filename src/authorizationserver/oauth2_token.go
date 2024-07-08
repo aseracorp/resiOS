@@ -4,7 +4,7 @@ import (
 	"net/http"
 	// "fmt"
 
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS-server/src/utils"
 )
 
 func tokenEndpoint(rw http.ResponseWriter, req *http.Request) {

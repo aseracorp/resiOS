@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/azukaar/cosmos-server/src/utils"
-	"github.com/azukaar/cosmos-server/src/docker"
+	"github.com/aseracorp/resiOS-server/src/utils"
+	"github.com/aseracorp/resiOS-server/src/docker"
 )
 
 func CheckAlerts(TrackingMetric string, Period string, metric utils.AlertMetricTrack, Value int) {
@@ -185,7 +185,7 @@ more information.<br />`, alert.Severity, metric.Key))
 			Title: "Alert triggered",
 			Message: "The alert \"" + alert.Name + "\" was triggered.",
 			Level: alert.Severity,
-			Link: "/cosmos-ui/monitoring",
+			Link: "/resios-ui/monitoring",
 		})
 
 	} else if action.Type == "script" {

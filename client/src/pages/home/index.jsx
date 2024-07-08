@@ -284,7 +284,7 @@ const HomePage = () => {
         <Stack style={{ zIndex: 2, padding: '0px 8px'}} spacing={1}>
             {isAdmin && coStatus && !coStatus.database && (
                 <Alert severity="error">
-                    Database cannot connect, this will impact multiple feature of Cosmos. Please fix ASAP!
+                    Database cannot connect, this will impact multiple feature of resiOS. Please fix ASAP!
                 </Alert>
             )}
 
@@ -311,20 +311,20 @@ const HomePage = () => {
 
             {isAdmin && coStatus && coStatus.newVersionAvailable && (
                 <Alert severity="warning">
-                    A new version of Cosmos is available! Please update to the latest version to get the latest features and bug fixes.
+                    A new version of resiOS is available! Please update to the latest version to get the latest features and bug fixes.
                 </Alert>
             )}
 
             {isAdmin && coStatus && !coStatus.hostmode && config && (
                 <Alert severity="warning">
-                    Your Cosmos server is not running in the docker host network mode. It is recommended that you migrate your install. <br />
+                    Your resiOS server is not running in the docker host network mode. It is recommended that you migrate your install. <br />
                     <Migrate014 config={config} />
                 </Alert>
             )}
 
             {isAdmin && coStatus && coStatus.needsRestart && (
                 <Alert severity="warning">
-                    You have made changes to the configuration that require a restart to take effect. Please restart Cosmos to apply the changes.
+                    You have made changes to the configuration that require a restart to take effect. Please restart resiOS to apply the changes.
                 </Alert>
             )}
 

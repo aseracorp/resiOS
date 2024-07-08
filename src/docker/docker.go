@@ -15,7 +15,7 @@ import (
 	"sync"
 	"strconv"
 	"runtime"
-	"github.com/azukaar/cosmos-server/src/utils" 
+	"github.com/aseracorp/resiOS-server/src/utils" 
 	"github.com/docker/cli/cli/config"
 
 	"github.com/docker/docker/client"
@@ -563,7 +563,7 @@ func CheckUpdatesAvailable() map[string]bool {
 				Title: "Container Update",
 				Message: "Container " + container.Names[0][1:] + " updated to the latest version!",
 				Level: "info",
-				Link: "/cosmos-ui/servapps/containers/" + container.Names[0][1:],
+				Link: "/resios-ui/servapps/containers/" + container.Names[0][1:],
 			})
 
 			utils.Log("Downloaded new update for " + container.Image + " ready to install")

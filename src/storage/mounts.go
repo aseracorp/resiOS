@@ -8,7 +8,7 @@ import (
 	"bufio"
 	"fmt"
 
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS-server/src/utils"
 )
 
 type MountPoint struct {

@@ -20,7 +20,7 @@ const pages = {
             id: 'servapps',
             title: 'ServApps',
             type: 'item',
-            url: '/cosmos-ui/servapps',
+            url: '/resios-ui/servapps',
             icon: AppstoreOutlined,
             adminOnly: true
         },
@@ -28,7 +28,7 @@ const pages = {
             id: 'url',
             title: 'URLs',
             type: 'item',
-            url: '/cosmos-ui/config-url',
+            url: '/resios-ui/config-url',
             icon: icons.NodeExpandOutlined,
         },
         {
@@ -51,7 +51,7 @@ const pages = {
             id: 'users',
             title: 'Users',
             type: 'item',
-            url: '/cosmos-ui/config-users',
+            url: '/resios-ui/config-users',
             icon: icons.ProfileOutlined,
             adminOnly: true
         },
@@ -59,7 +59,7 @@ const pages = {
             id: 'openid',
             title: 'OpenID',
             type: 'item',
-            url: '/cosmos-ui/openid-manage',
+            url: '/resios-ui/openid-manage',
             icon: PicLeftOutlined,
             adminOnly: true
         },
@@ -67,7 +67,7 @@ const pages = {
             id: 'cron',
             title: 'MenuScheduler',
             type: 'item',
-            url: '/cosmos-ui/cron',
+            url: '/resios-ui/cron',
             icon: ClockCircleOutlined,
             adminOnly: true
         },
@@ -75,7 +75,7 @@ const pages = {
             id: 'config',
             title: 'Configuration',
             type: 'item',
-            url: '/cosmos-ui/config-general',
+            url: '/resios-ui/config-general',
             icon: icons.SettingOutlined,
         }
     ]

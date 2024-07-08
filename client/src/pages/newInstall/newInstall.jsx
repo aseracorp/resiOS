@@ -67,7 +67,7 @@ const NewInstall = () => {
             setStatus(res.data);
         } catch(error) {
             if(error.status == 401)
-            redirectToLocal("/cosmos-ui/login");
+            redirectToLocal("/resios-ui/login");
         }
         if (typeof status !== 'undefined') {
             setTimeout(() => {
@@ -391,7 +391,7 @@ const NewInstall = () => {
                                 <Alert severity="info"><Trans i18nKey="IfDNSChallengeText">
                                     You have enabled the DNS challenge. Make sure you have set the environment variables for your DNS provider.
                                     You can enable it now, but make sure you have set up your API tokens accordingly before attempting to access 
-                                    Cosmos after this installer. See doc here: <a target="_blank" rel="noopener noreferrer" href="https://go-acme.github.io/lego/dns/">https://go-acme.github.io/lego/dns/</a>
+                                    resiOS after this installer. See doc here: <a target="_blank" rel="noopener noreferrer" href="https://go-acme.github.io/lego/dns/">https://go-acme.github.io/lego/dns/</a>
                                 </Trans></Alert>
                             )}
                             <DnsChallengeComp 
@@ -448,7 +448,7 @@ const NewInstall = () => {
                             label={<span>{t('AllowHTTPLocalIPAccess')} &nbsp;
                             <Tooltip title={<span style={{fontSize:'110%'}}><Trans i18nKey="AllowHTTPLocalIPAccessTitle">
                                 When HTTPS is used along side a domain, depending on your networking configuration, it is possible that your server is not receiving direct local connections. <br />
-                                This option allows you to also access your Cosmos admin using your local IP address, like ip:port. <br />
+                                This option allows you to also access your resiOS admin using your local IP address, like ip:port. <br />
                                 You can already create ip:port URLs for your apps, <strong>but this will make them HTTP-only</strong>.</Trans></span>}>
                                 <QuestionCircleOutlined size={'large'} />
                             </Tooltip></span>}
@@ -586,7 +586,7 @@ const NewInstall = () => {
         {
             label: t('Finish'),
             component: <div><Trans i18nKey="newInstallFinishText">
-                Well done! You have successfully installed Cosmos. You can now login to your server using the admin account you created.
+                Well done! You have successfully installed resiOS. You can now login to your server using the admin account you created.
                 If you have changed the hostname, don't forget to use that URL to access your server after the restart.
                 If you have are running into issues, check the logs for any error messages and edit the file in the /config folder. 
                 If you still don't manage, please join our <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/PwMWwsrwHA">Discord server</a> and we'll be happy to help!
@@ -641,7 +641,7 @@ const NewInstall = () => {
                                     step: "5",
                                 })
                                 setTimeout(() => {
-                                    redirectTo(hostname + "/cosmos-ui/login");
+                                    redirectTo(hostname + "/resios-ui/login");
                                 }, 500);
                             } else {
                                 setActiveStep(activeStep + 1)

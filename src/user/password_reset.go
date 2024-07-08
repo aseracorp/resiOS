@@ -6,7 +6,7 @@ import (
 	"time"
 	"math/rand"
 
-	"github.com/azukaar/cosmos-server/src/utils" 
+	"github.com/aseracorp/resiOS-server/src/utils" 
 )
 
 type PasswordResetRequestJSON struct {
@@ -83,7 +83,7 @@ func ResetPassword(w http.ResponseWriter, req *http.Request) {
 			}
 
 			utils.Debug("Sending an email to " + user.Email)
-			url := utils.GetServerURL() + ("cosmos-ui/register?t=1&nickname="+user.Nickname+"&key=" + RegisterKey)
+			url := utils.GetServerURL() + ("resios-ui/register?t=1&nickname="+user.Nickname+"&key=" + RegisterKey)
 			
 			errEm := SendPasswordEmail(user.Nickname, user.Email, url) 
 

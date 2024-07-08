@@ -2,17 +2,17 @@ package main
 
 import (
     "net/http"
-		"github.com/azukaar/cosmos-server/src/utils"
-		"github.com/azukaar/cosmos-server/src/user"
-		"github.com/azukaar/cosmos-server/src/configapi"
-		"github.com/azukaar/cosmos-server/src/proxy"
-		"github.com/azukaar/cosmos-server/src/docker"
-		"github.com/azukaar/cosmos-server/src/authorizationserver"
-		"github.com/azukaar/cosmos-server/src/market"
-		"github.com/azukaar/cosmos-server/src/constellation"
-		"github.com/azukaar/cosmos-server/src/metrics"
-		"github.com/azukaar/cosmos-server/src/cron"
-		"github.com/azukaar/cosmos-server/src/storage"
+		"github.com/aseracorp/resiOS-server/src/utils"
+		"github.com/aseracorp/resiOS-server/src/user"
+		"github.com/aseracorp/resiOS-server/src/configapi"
+		"github.com/aseracorp/resiOS-server/src/proxy"
+		"github.com/aseracorp/resiOS-server/src/docker"
+		"github.com/aseracorp/resiOS-server/src/authorizationserver"
+		"github.com/aseracorp/resiOS-server/src/market"
+		"github.com/aseracorp/resiOS-server/src/constellation"
+		"github.com/aseracorp/resiOS-server/src/metrics"
+		"github.com/aseracorp/resiOS-server/src/cron"
+		"github.com/aseracorp/resiOS-server/src/storage"
 		"github.com/gorilla/mux"
 		"strconv"
 		"time"
@@ -501,10 +501,10 @@ func InitServer() *mux.Router {
 	}
 
 	// fs := http.FileServer(http.Dir(pwd + "/static"))
-	uirouter := router.PathPrefix("/cosmos-ui").Subrouter()
+	uirouter := router.PathPrefix("/resios-ui").Subrouter()
 	uirouter.Use(utils.SetSecurityHeaders)
 	SecureAPI(uirouter, true, true)
-	uirouter.PathPrefix("/").Handler(http.StripPrefix("/cosmos-ui", utils.SPAHandler(pwd + "/static")))
+	uirouter.PathPrefix("/").Handler(http.StripPrefix("/resios-ui", utils.SPAHandler(pwd + "/static")))
 	
 	if(!config.HTTPConfig.AcceptAllInsecureHostname) {
 		uirouter.Use(utils.EnsureHostname)
@@ -513,11 +513,11 @@ func InitServer() *mux.Router {
 	router = proxy.BuildFromConfig(router, HTTPConfig.ProxyConfig)
 	
 	router.HandleFunc("/", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    http.Redirect(w, r, "/cosmos-ui/", http.StatusTemporaryRedirect)
+    http.Redirect(w, r, "/resios-ui/", http.StatusTemporaryRedirect)
 	}))
 
-	router.HandleFunc("/cosmos-ui", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-    http.Redirect(w, r, "/cosmos-ui/", http.StatusTemporaryRedirect)
+	router.HandleFunc("/resios-ui", http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+    http.Redirect(w, r, "/resios-ui/", http.StatusTemporaryRedirect)
 	}))
 
 	userRouter := router.PathPrefix("/oauth2").Subrouter()

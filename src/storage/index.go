@@ -1,7 +1,7 @@
 package storage 
 
 import (
-	// "github.com/azukaar/cosmos-server/src/utils"
+	// "github.com/aseracorp/resiOS-server/src/utils"
 )
 
 type DiskInfo struct {

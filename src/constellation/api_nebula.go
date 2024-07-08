@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	
-	"github.com/azukaar/cosmos-server/src/utils" 
+	"github.com/aseracorp/resiOS-server/src/utils" 
 )
 
 func API_GetConfig(w http.ResponseWriter, req *http.Request) {

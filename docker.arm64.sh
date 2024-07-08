@@ -10,16 +10,16 @@ if [ -n "$CIRCLE_BRANCH" ]; then
   fi
 fi
 
-echo "Pushing azukaar/cosmos-server:$VERSION and azukaar/cosmos-server:$LATEST"
+echo "Pushing aseracorp/resios:$VERSION and aseracorp/resios:$LATEST"
 
 sh build.arm64.sh
 
 docker build \
-  -t azukaar/cosmos-server:$VERSION-arm64 \
-  -t azukaar/cosmos-server:$LATEST-arm64 \
+  -t aseracorp/resios:$VERSION-arm64 \
+  -t aseracorp/resios:$LATEST-arm64 \
   -f dockerfile.arm64 \
   --platform linux/arm64 \
   .
 
-docker push azukaar/cosmos-server:$VERSION-arm64
-docker push azukaar/cosmos-server:$LATEST-arm64
+docker push aseracorp/resios:$VERSION-arm64
+docker push aseracorp/resios:$LATEST-arm64

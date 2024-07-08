@@ -2,7 +2,7 @@ package constellation
 
 import (
 	"net/http"
-	"github.com/azukaar/cosmos-server/src/utils" 
+	"github.com/aseracorp/resiOS-server/src/utils" 
 )
 
 func ConstellationAPIDevices(w http.ResponseWriter, req *http.Request) {
