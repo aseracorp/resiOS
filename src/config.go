@@ -2,7 +2,7 @@ package main
 
 import (
 	// "encoding/json"
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS/src/utils"
 )
 
 func LoadConfig() utils.Config {

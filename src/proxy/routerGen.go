@@ -6,9 +6,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/azukaar/cosmos-server/src/user"
-	"github.com/azukaar/cosmos-server/src/constellation"
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS/src/user"
+	"github.com/aseracorp/resiOS/src/constellation"
+	"github.com/aseracorp/resiOS/src/utils"
 	"github.com/go-chi/httprate"
 	"github.com/gorilla/mux"
 )

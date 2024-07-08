@@ -9,7 +9,7 @@ import (
 	"io"
 	"errors"
 
-	"github.com/azukaar/cosmos-server/src/utils"
+	"github.com/aseracorp/resiOS/src/utils"
 	"github.com/dell/csi-baremetal/pkg/base/linuxutils/lsblk"
 	"github.com/sirupsen/logrus"
 	"github.com/anatol/smart.go"
