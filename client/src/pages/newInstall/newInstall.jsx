@@ -67,7 +67,7 @@ const NewInstall = () => {
             setStatus(res.data);
         } catch(error) {
             if(error.status == 401)
-            redirectToLocal("/cosmos-ui/login");
+            redirectToLocal("/resios-ui/login");
         }
         if (typeof status !== 'undefined') {
             setTimeout(() => {
@@ -641,7 +641,7 @@ const NewInstall = () => {
                                     step: "5",
                                 })
                                 setTimeout(() => {
-                                    redirectTo(hostname + "/cosmos-ui/login");
+                                    redirectTo(hostname + "/resios-ui/login");
                                 }, 500);
                             } else {
                                 setActiveStep(activeStep + 1)

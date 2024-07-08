@@ -38,7 +38,7 @@
   <a target="_blank" href="https://cosmos-cloud.io/doc">
     <img height="44px" src="https://raw.githubusercontent.com/aseracorp/resiOS/master/icons/doc.png" />
   </a>
-  <a target="_blank" href="https://cosmos-cloud.io/cosmos-ui">
+  <a target="_blank" href="https://cosmos-cloud.io/resios-ui">
     <img height="44px" src="https://raw.githubusercontent.com/aseracorp/resiOS/master/icons/demo.png" />
   </a>
   <br/>

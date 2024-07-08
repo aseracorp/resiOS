@@ -20,7 +20,7 @@ const pages = {
             id: 'servapps',
             title: 'ServApps',
             type: 'item',
-            url: '/cosmos-ui/servapps',
+            url: '/resios-ui/servapps',
             icon: AppstoreOutlined,
             adminOnly: true
         },
@@ -28,14 +28,14 @@ const pages = {
             id: 'url',
             title: 'URLs',
             type: 'item',
-            url: '/cosmos-ui/config-url',
+            url: '/resios-ui/config-url',
             icon: icons.NodeExpandOutlined,
         },
         {
             id: 'storage',
             title: 'MenuStorage',
             type: 'item',
-            url: '/cosmos-ui/storage',
+            url: '/resios-ui/storage',
             icon: icons.FolderOutlined,
             adminOnly: true            
         },
@@ -43,7 +43,7 @@ const pages = {
             id: 'constellation',
             title: 'MenuConstellation',
             type: 'item',
-            url: '/cosmos-ui/constellation',
+            url: '/resios-ui/constellation',
             icon: () => <img height="28px" width="28px" style={{marginLeft: "-6px"}} src={ConstellationIcon} />,
             
         },
@@ -51,7 +51,7 @@ const pages = {
             id: 'users',
             title: 'Users',
             type: 'item',
-            url: '/cosmos-ui/config-users',
+            url: '/resios-ui/config-users',
             icon: icons.ProfileOutlined,
             adminOnly: true
         },
@@ -59,7 +59,7 @@ const pages = {
             id: 'openid',
             title: 'OpenID',
             type: 'item',
-            url: '/cosmos-ui/openid-manage',
+            url: '/resios-ui/openid-manage',
             icon: PicLeftOutlined,
             adminOnly: true
         },
@@ -67,7 +67,7 @@ const pages = {
             id: 'cron',
             title: 'MenuScheduler',
             type: 'item',
-            url: '/cosmos-ui/cron',
+            url: '/resios-ui/cron',
             icon: ClockCircleOutlined,
             adminOnly: true
         },
@@ -75,7 +75,7 @@ const pages = {
             id: 'config',
             title: 'Configuration',
             type: 'item',
-            url: '/cosmos-ui/config-general',
+            url: '/resios-ui/config-general',
             icon: icons.SettingOutlined,
         }
     ]
