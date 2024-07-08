@@ -10,16 +10,16 @@ if [ -n "$CIRCLE_BRANCH" ]; then
   fi
 fi
 
-echo "Pushing aseracorp/resiOS:$VERSION and aseracorp/resiOS:$LATEST"
+echo "Pushing aseracorp/resios:$VERSION and aseracorp/resios:$LATEST"
 
 sh build.arm64.sh
 
 docker build \
-  -t aseracorp/resiOS:$VERSION-arm64 \
-  -t aseracorp/resiOS:$LATEST-arm64 \
+  -t aseracorp/resios:$VERSION-arm64 \
+  -t aseracorp/resios:$LATEST-arm64 \
   -f dockerfile.arm64 \
   --platform linux/arm64 \
   .
 
-docker push aseracorp/resiOS:$VERSION-arm64
-docker push aseracorp/resiOS:$LATEST-arm64
+docker push aseracorp/resios:$VERSION-arm64
+docker push aseracorp/resios:$LATEST-arm64
