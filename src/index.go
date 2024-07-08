@@ -1,20 +1,20 @@
 package main
 
 import (
-	"math/rand"
-	"time"
 	"context"
+	"math/rand"
 	"os"
+	"time"
 
-	"github.com/azukaar/cosmos-server/src/docker"
-	"github.com/azukaar/cosmos-server/src/utils"
-	"github.com/azukaar/cosmos-server/src/authorizationserver"
-	"github.com/azukaar/cosmos-server/src/market"
-	"github.com/azukaar/cosmos-server/src/constellation"
-	"github.com/azukaar/cosmos-server/src/metrics"
-	"github.com/azukaar/cosmos-server/src/storage"
-	"github.com/azukaar/cosmos-server/src/cron"
-	"github.com/azukaar/cosmos-server/src/proxy"
+	"github.com/aseracorp/resiOS/src/authorizationserver"
+	"github.com/aseracorp/resiOS/src/constellation"
+	"github.com/aseracorp/resiOS/src/cron"
+	"github.com/aseracorp/resiOS/src/docker"
+	"github.com/aseracorp/resiOS/src/market"
+	"github.com/aseracorp/resiOS/src/metrics"
+	"github.com/aseracorp/resiOS/src/proxy"
+	"github.com/aseracorp/resiOS/src/storage"
+	"github.com/aseracorp/resiOS/src/utils"
 )
 
 func HandleCLIArgs() bool {
@@ -55,7 +55,7 @@ func main() {
 	utils.Log("------------------------------------------")
 	utils.Log("Starting Cosmos-Server version " + GetCosmosVersion())
 	utils.Log("------------------------------------------")
-	
+
 	// utils.ReBootstrapContainer = docker.BootstrapContainerFromTags
 	utils.PushShieldMetrics = metrics.PushShieldMetrics
 	utils.GetContainerIPByName = docker.GetContainerIPByName
@@ -63,13 +63,13 @@ func main() {
 	utils.CheckDockerNetworkMode = docker.CheckDockerNetworkMode
 
 	rand.Seed(time.Now().UnixNano())
-	
+
 	LoadConfig()
 
 	utils.RemovePIDFile()
 
 	utils.CheckHostNetwork()
-	
+
 	go CRON()
 
 	docker.ExportDocker()
@@ -111,7 +111,7 @@ func main() {
 		utils.Log("Starting market services...")
 
 		market.Init()
-		
+
 		utils.Log("Starting OpenID services...")
 
 		authorizationserver.Init()
@@ -125,7 +125,7 @@ func main() {
 		utils.ProxyRClone = storage.InitRemoteStorage()
 
 		storage.InitSnapRAIDConfig()
-		
+
 		// Has to be done last, so scheduler does not re-init
 		cron.Init()
 
