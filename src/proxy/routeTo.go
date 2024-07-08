@@ -10,8 +10,8 @@ import (
 	"io/ioutil"
 	"strconv"
 
-	"github.com/azukaar/cosmos-server/src/utils"
-	"github.com/azukaar/cosmos-server/src/docker"
+	"github.com/aseracorp/resiOS/src/utils"
+	"github.com/aseracorp/resiOS/src/docker"
 )
 
 
