@@ -114,9 +114,9 @@ const Logs = ({ containerInfo }) => {
         <Stack direction={screenMin ? 'row' : 'column'} spacing={3}>
           <Stack direction="row" spacing={3}>
           <Input
-            label={t('Search')}
+            label={t('global.searchPlaceholder')}
             value={searchTerm}
-            placeholder={t('Search')+"..."}
+            placeholder={t('global.searchPlaceholder')+"..."}
             onChange={(e) => {
               setHasScrolled(false);
               setSearchTerm(e.target.value);

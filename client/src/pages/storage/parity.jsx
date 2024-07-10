@@ -129,7 +129,7 @@ export const Parity = () => {
           <SnapRAIDDialog refresh={refresh} />
           <ResponsiveButton variant="outlined" startIcon={<ReloadOutlined />} onClick={() => {
             refresh();
-          }}>{t('Refresh')}</ResponsiveButton>
+          }}>{t('global.refresh')}</ResponsiveButton>
         </Stack>
       <div>
       {editOpened && <SnapRAIDDialogInternal refresh={refresh} open={editOpened} setOpen={setEditOpened} data={editOpened} />}
@@ -153,7 +153,7 @@ export const Parity = () => {
             },
           },
           {
-            title: t('Enabled'), 
+            title: t('global.enabled'), 
             clickable:true, 
             field: (r, k) => <Checkbox disabled={loading} size='large' color={r.Enabled ? 'success' : 'default'}
               onChange={() => setEnabled(r.Name, !r.Enabled)}
@@ -173,10 +173,10 @@ export const Parity = () => {
           {
             title: t('SyncScrubInterval'),
             screenMin: 'sm',
-            field: (r) => <div>Sync: {crontabToText(r.SyncCrontab)}<br/>Scrub: {crontabToText(r.ScrubCrontab)}</div>
+            field: (r) => <div>Sync: {crontabToText(r.SyncCrontab, t)}<br/>Scrub: {crontabToText(r.ScrubCrontab, t)}</div>
           },
           {
-            title: t('Status'),
+            title: t('global.statusTitle'),
             screenMax: 'md',
             field: (r) => ({
               error: <ExclamationCircleOutlined style={{color: 'red'}}/>,
@@ -204,7 +204,7 @@ export const Parity = () => {
                     <ListItemIcon>
                       <EditOutlined fontSize="small" />
                     </ListItemIcon>
-                    <ListItemText>{t('Edit')}</ListItemText>
+                    <ListItemText>{t('global.edit')}</ListItemText>
                   </MenuItem>
                   <MenuItem disabled={loading} onClick={() => sync(r.Name)}>
                     <ListItemIcon>
@@ -228,7 +228,7 @@ export const Parity = () => {
                     <ListItemIcon>
                       <DeleteOutlined fontSize="small" />
                     </ListItemIcon>
-                    <ListItemText>{t('Delete')}</ListItemText>
+                    <ListItemText>{t('global.delete')}</ListItemText>
                   </MenuItem>
                 </MenuButton>
               </div>

@@ -225,15 +225,15 @@ const DockerContainerSetup = ({
                         {newContainer && (
                           <CosmosInputText
                             name="name"
-                            label={t('Name')}
-                            placeholder={t('Name')}
+                            label={t('global.nameTitle')}
+                            placeholder={t('global.nameTitle')}
                             formik={formik}
                           />
                         )}
                         <CosmosInputText
                           name="image"
-                          label={t('Image')}
-                          placeholder={t('Image')}
+                          label={t('management.servApps.container.overview.imageTitle')}
+                          placeholder={t('management.servApps.container.overview.imageTitle')}
                           formik={formik}
                         />
                         <CosmosSelect

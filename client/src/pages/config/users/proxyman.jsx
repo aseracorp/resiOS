@@ -166,10 +166,10 @@ const ProxyManagement = () => {
     <Stack direction="row" spacing={1} style={{ marginBottom: '20px' }}>
       <Button variant="contained" color="primary" startIcon={<SyncOutlined />} onClick={() => {
           refresh();
-      }}>{t('Refresh')}</Button>&nbsp;&nbsp;
+      }}>{t('global.refresh')}</Button>&nbsp;&nbsp;
       <Button variant="contained" color="primary" startIcon={<PlusCircleOutlined />} onClick={() => {
         setOpenNewModal(true);
-      }}>{t('Create')}</Button>
+      }}>{t('global.action.create')}</Button>
     </Stack>
 
     {config && <>
@@ -191,7 +191,7 @@ const ProxyManagement = () => {
             },
           },
           {
-            title: t('Enabled'), 
+            title: t('global.enabled'), 
             clickable:true, 
             field: (r, k) => <Checkbox disabled={isLoading} size='large' color={!r.Disabled ? 'success' : 'default'}
               onChange={setRouteEnabled(routes.indexOf(r))}
@@ -209,7 +209,7 @@ const ProxyManagement = () => {
               <div style={{display:'inline-block', textDecoration: 'inherit', fontSize: '90%', opacity: '90%'}}>{r.Description}</div>
             </>
           },
-          { title: t('Network'), screenMin: 'lg', clickable:false, field: (r) => 
+          { title: t('global.network'), screenMin: 'lg', clickable:false, field: (r) => 
             <div style={{width: '400px', marginLeft: '-200px', marginBottom: '10px'}}>
               <MiniPlotComponent  metrics={[
                 "cosmos.proxy.route.bytes." + r.Name,
@@ -219,7 +219,7 @@ const ProxyManagement = () => {
           },
           { title: t('Origin'), screenMin: 'md', clickable:true, search: (r) => r.Host + ' ' + r.PathPrefix, field: (r) => <HostChip route={r} /> },
           { title: t('Target'), screenMin: 'md', search: (r) => r.Target, field: (r) => <><RouteMode route={r} /> <Chip label={r.Target} /></> },
-          { title: t('Security'), screenMin: 'lg', field: (r) => <RouteSecurity route={r} />,
+          { title: t('global.securityTitle'), screenMin: 'lg', field: (r) => <RouteSecurity route={r} />,
           style: {minWidth: '70px'} },
           { title: '', clickable:true, field: (r, k) =>  <RouteActions
               route={r}

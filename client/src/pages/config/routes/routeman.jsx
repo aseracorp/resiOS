@@ -158,8 +158,8 @@ const RouteManagement = ({ routeConfig, routeNames, config, TargetContainer, noC
 
                   <CosmosInputText
                     name="Name"
-                    label={t('Name')}
-                    placeholder={t('Name')}
+                    label={t('global.nameTitle')}
+                    placeholder={t('global.nameTitle')}
                     formik={formik}
                   />
 
@@ -230,8 +230,8 @@ const RouteManagement = ({ routeConfig, routeNames, config, TargetContainer, noC
 
                   {formik.values.UseHost && (<><CosmosInputText
                     name="Host"
-                    label={t('Host')}
-                    placeholder={t('Host')}
+                    label={t('management.servapps.networks.list.host')}
+                    placeholder={t('management.servapps.networks.list.host')}
                     formik={formik}
                     style={{ paddingLeft: '20px' }}
                     onChange={(e) => {
@@ -324,7 +324,7 @@ const RouteManagement = ({ routeConfig, routeNames, config, TargetContainer, noC
                 variant="contained"
                 color="primary"
               >
-                {t('Save')}
+                {t('global.saveAction')}
               </Button></MainCard>}
             </Stack>
           </form>

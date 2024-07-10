@@ -74,16 +74,16 @@ const NewVolumeButton = ({ fullWidth, refresh }) => {
                 error={formik.touched.driver && Boolean(formik.errors.driver)}
                 style={{ marginBottom: '16px' }}
               >
-                <InputLabel htmlFor="driver">{t('Driver')}</InputLabel>
+                <InputLabel htmlFor="driver">{t('global.driver')}</InputLabel>
                 <Select
                   id="driver"
                   name="driver"
                   value={formik.values.driver}
                   onChange={formik.handleChange}
-                  label={t('Driver')}
+                  label={t('global.driver')}
                 >
                   <MenuItem value="">
-                    <em>None</em>
+                    <em>{t('None')}</em>
                   </MenuItem>
                   <MenuItem value="local">{t('Local')}</MenuItem>
                   {/* Add more driver options if needed */}
@@ -97,12 +97,12 @@ const NewVolumeButton = ({ fullWidth, refresh }) => {
             )}
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => setIsOpened(false)}>Cancel</Button>
+            <Button onClick={() => setIsOpened(false)}>{t('global.cancelAction')}</Button>
             <LoadingButton
               onClick={formik.handleSubmit}
               loading={formik.isSubmitting}
             >
-              {t('Create')}
+              {t('global.action.create')}
             </LoadingButton>
           </DialogActions>
         </FormikProvider>

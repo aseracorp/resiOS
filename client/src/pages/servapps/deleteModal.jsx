@@ -232,7 +232,7 @@ const DeleteModal = ({Ids, containers, refreshServApps, setIsUpdatingId, config}
                     })}
                     {networks.map((network) => {
                       return  (!isDeleting || (!ignored.includes(network + "-network"))) &&<div key={network + "-network"}>
-                        <ShowAction item={network + "-network"} /> <ApiOutlined /> {t('Network')} {network}
+                        <ShowAction item={network + "-network"} /> <ApiOutlined /> {t('global.network')} {network}
                       </div>
                     })}
                     {volumes.map((mount) => {
@@ -254,10 +254,10 @@ const DeleteModal = ({Ids, containers, refreshServApps, setIsUpdatingId, config}
                 </DialogContentText>
             </DialogContent>
             {!isDeleting && <DialogActions>
-                <Button onClick={() => setIsOpen(false)}>{t('Cancel')}</Button>
+                <Button onClick={() => setIsOpen(false)}>{t('global.cancelAction')}</Button>
                 <Button onClick={() => {
                   doDelete();
-                }}>{t('Delete')}</Button>
+                }}>{t('global.delete')}</Button>
             </DialogActions>}
             {isDeleting && <DialogActions>
                 <Button onClick={() => {

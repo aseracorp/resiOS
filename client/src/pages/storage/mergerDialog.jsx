@@ -115,7 +115,7 @@ const MergerDialogInternal = ({ refresh, open, setOpen, data }) => {
                   </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={() => setOpen(false)}>{t('Cancel')}</Button>
+                  <Button onClick={() => setOpen(false)}>{t('global.cancelAction')}</Button>
                   <LoadingButton color="primary" variant="contained" type="submit" onClick={() => {
                     formik.handleSubmit();
                   }}>{t('Merge')}</LoadingButton>

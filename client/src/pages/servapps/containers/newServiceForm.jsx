@@ -229,7 +229,7 @@ const NewDockerServiceForm = () => {
           />}{nav()}</Stack>
         },
         {
-          title: t('Network'),
+          title: t('global.network'),
           disabled: maxTab < 1,
           children: <Stack spacing={2}><NetworkContainerSetup newContainer containerInfo={containerInfo} OnChange={(values) => {
             const newValues = {

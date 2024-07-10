@@ -21,17 +21,17 @@ const ServappsIndex = () => {
   return <div>
     {!stack && <PrettyTabbedView path="/resios-ui/servapps/:tab" tabs={[
         {
-          title: t('Containers'),
+          title: t('management.servapps.networks.containers'),
           children: <ServApps stack={stack} />,
           path: 'containers'
         },
         {
-          title: t('Volumes'),
+          title: t('management.servapps.networks.volumes'),
           children: <VolumeManagementList />,
           path: 'volumes'
         },
         {
-          title: t('Networks'),
+          title: t('global.networks'),
           children:  <NetworkManagementList />,
           path: 'networks'
         },

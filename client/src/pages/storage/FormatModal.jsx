@@ -87,13 +87,13 @@ const FormatModal = ({ cb, OnClose }) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => OnClose()}>{t('Cancel')}</Button>
+            <Button onClick={() => OnClose()}>{t('global.cancelAction')}</Button>
             <LoadingButton
               disabled={formik.errors.submit}
               onClick={formik.handleSubmit}
               loading={formik.isSubmitting}
             >
-              {t('Confirm')}
+              {t('components.confirm')}
             </LoadingButton>
           </DialogActions>
         </FormikProvider>

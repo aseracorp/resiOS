@@ -7,7 +7,7 @@ import localizedFormat from 'dayjs/plugin/localizedFormat'; // import this for l
 import 'dayjs/locale/en-gb';
 
 // import i18n (needs to be bundled ;)) 
-import './utils/i18n';
+import './utils/locales/i18n';
 
 // scroll bar
 import 'simplebar/src/simplebar.css';

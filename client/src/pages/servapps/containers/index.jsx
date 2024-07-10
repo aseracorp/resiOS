@@ -55,23 +55,23 @@ const ContainerIndex = () => {
       isLoading={!container || !config}
       tabs={[
         {
-          title: t('Overview'),
+          title: t('management.servapps.overview'),
           children: <ContainerOverview updatesAvailable={updatesAvailable} selfName={selfName} refresh={refreshContainer} containerInfo={container} config={config}/>
         },
         {
-          title: t('Logs'),
+          title: t('management.scheduler.list.action.logs'),
           children: <Logs containerInfo={container} config={config}/>
         },
         {
-          title: t('Monitoring'),
+          title: t('menu-items.navigation.monitoringTitle'),
           children: <ContainerMetrics containerName={containerName}/>
         },
         {
-          title: t('Events'),
+          title: t('navigation.monitoring.eventsTitle'),
           children: <EventExplorerStandalone initSearch={`{"object":"container@${containerName}"}`}/>
         },
         {
-          title: t('Terminal'),
+          title: t('management.servapps.terminal'),
           children: <DockerTerminal refresh={refreshContainer} containerInfo={container} config={config}/>
         },
         {
@@ -83,7 +83,7 @@ const ContainerIndex = () => {
           children: <DockerContainerSetup refresh={refreshContainer} containerInfo={container} config={config}/>
         },
         {
-          title: t('Network'),
+          title: t('global.network'),
           children: <NetworkContainerSetup refresh={refreshContainer} containerInfo={container} config={config}/>
         },
         {

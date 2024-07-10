@@ -155,7 +155,7 @@ export const ConstellationDNS = () => {
                       variant="contained"
                       color="primary"
                     >
-                      {t('Save')}
+                      {t('global.saveAction')}
                   </LoadingButton>
                 </Stack>
               </form>

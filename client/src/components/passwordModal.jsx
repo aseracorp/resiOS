@@ -38,7 +38,7 @@ const PasswordModal = ({ textInfos, cb, OnClose }) => {
     <>
       <Dialog open={true} onClose={() => OnClose()}>
         <FormikProvider value={formik}>
-          <DialogTitle>{t('ConfirmPassword')}</DialogTitle>
+          <DialogTitle>{t('components.confirmPassword')}</DialogTitle>
           <DialogContent>
             <DialogContentText>
               <form onSubmit={formik.handleSubmit}>
@@ -47,7 +47,7 @@ const PasswordModal = ({ textInfos, cb, OnClose }) => {
                     fullWidth
                     id="password"
                     name="password"
-                    label={t('YourPassword')}
+                    label={t('components.yourPassword')}
                     value={formik.values.password}
                     type="password"
                     onChange={formik.handleChange}
@@ -65,13 +65,13 @@ const PasswordModal = ({ textInfos, cb, OnClose }) => {
             </DialogContentText>
           </DialogContent>
           <DialogActions>
-            <Button onClick={() => OnClose()}>{t('Cancel')}</Button>
+            <Button onClick={() => OnClose()}>{t('global.cancelAction')}</Button>
             <LoadingButton
               disabled={formik.errors.submit}
               onClick={formik.handleSubmit}
               loading={formik.isSubmitting}
             >
-              {t('Confirm')}
+              {t('components.confirm')}
             </LoadingButton>
           </DialogActions>
         </FormikProvider>

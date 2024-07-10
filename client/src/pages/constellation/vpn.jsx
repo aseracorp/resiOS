@@ -148,7 +148,7 @@ export const ConstellationVPN = () => {
                       variant="contained"
                       color="primary"
                     >
-                      {t('Save')}
+                      {t('global.saveAction')}
                   </LoadingButton>
                   <UploadButtons
                     accept=".yml,.yaml"

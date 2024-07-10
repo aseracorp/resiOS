@@ -122,7 +122,7 @@ const NewDockerService = ({service, refresh, edit}) => {
         className={edit ? '' : 'shinyButton'}
         loading={log.length && !isDone}
         startIcon={edit ? <SyncOutlined /> : <PlusCircleOutlined />}
-      >{edit ? t('Edit'): t('Create')}</LoadingButton>}
+      >{edit ? t('global.edit'): t('global.action.create')}</LoadingButton>}
       {isDone && <Stack spacing={1}>
         <Alert severity="success">{t('ServiceCreated')}</Alert>
         {installer && installer['post-install'] && installer['post-install'].map(m =>{

@@ -14,12 +14,12 @@ const DiscordOutlinedIcon = (props) => {
 
 const support = {
     id: 'support',
-    title: 'Support',
+    title: 'menu-items.support',
     type: 'group',
     children: [
         {
             id: 'helpDiscussion',
-            title: 'HelpDiscussion',
+            title: 'aseracorp.menu-items.management.helpDiscussionTitle',
             type: 'item',
             url: 'https://github.com/aseracorp/resiOS/discussions',
             icon: MessageOutlined,
@@ -28,7 +28,7 @@ const support = {
         },
         {
             id: 'github',
-            title: 'Github',
+            title: 'menu-items.support.github',
             type: 'item',
             url: 'https://github.com/aseracorp/resiOS',
             icon: GithubOutlined,
@@ -37,7 +37,7 @@ const support = {
         },
         {
             id: 'documentation',
-            title: 'Documentation',
+            title: 'menu-items.support.docsTitle',
             type: 'item',
             url: 'https://cosmos-cloud.io/doc',
             icon: QuestionOutlined,
@@ -46,7 +46,7 @@ const support = {
         },
         {
             id: 'bug',
-            title: 'Found a Bug?',
+            title: 'menu-items.support.bugReportTitle',
             type: 'item',
             url: 'https://github.com/aseracorp/resiOS/issues/new/choose',
             icon: BugOutlined,

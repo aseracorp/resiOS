@@ -81,13 +81,13 @@ const ContainerOverview = ({ containerInfo, config, refresh, updatesAvailable, s
           </div>
             <div>
               {({
-               "created": <Chip label={t('Created')} color="warning" />,
-               "restarting": <Chip label={t('Restarting')} color="warning" />,
-               "running": <Chip label={t('Running')} color="success" />,
-               "removing": <Chip label={t('Removing')} color="error" />,
-               "paused": <Chip label={t('Paused')} color="info" />,
-               "exited": <Chip label={t('Exited')} color="error" />,
-               "dead": <Chip label={t('Dead')} color="error" />,
+               "created": <Chip label={t('management.servApps.createdChip.createdLabel')} color="warning" />,
+               "restarting": <Chip label={t('management.servApps.restartingChip.restartingLabel')} color="warning" />,
+               "running": <Chip label={t('management.servApps.runningChip.runningLabel')} color="success" />,
+               "removing": <Chip label={t('management.servApps.removingChip.removingLabel')} color="error" />,
+               "paused": <Chip label={t('management.servApps.pausedChip.pausedLabel')} color="info" />,
+               "exited": <Chip label={t('management.servApps.exitedChip.exitedLabel')} color="error" />,
+               "dead": <Chip label={t('management.servApps.deadChip.deadLabel')} color="error" />,
              })[State.Status]}
             </div>
             <UploadButtons
@@ -133,20 +133,20 @@ const ContainerOverview = ({ containerInfo, config, refresh, updatesAvailable, s
             </Stack>
             {containerInfo.State.Status !== 'running' && (
             <Alert severity="warning" style={{ marginBottom: '10px' }}>
-                {t('WarningContainerNotRunning')}
+                {t('management.servApps.notRunningWarning')}
               </Alert>
             )}
-            <strong><ContainerOutlined /> {t('Image')}</strong>
+            <strong><ContainerOutlined /> {t('management.servApps.container.overview.imageTitle')}</strong>
             <div style={info}>{Image}</div>
             <strong><DesktopOutlined /> ID</strong>
             <div style={info}>{containerInfo.Id}</div>
-            <strong><InfoCircleOutlined /> {t('IPAddress')}</strong>
+            <strong><InfoCircleOutlined /> {t('management.servApps.container.overview.ipAddressTitle')}</strong>
             <div style={info}>{IPAddress}</div>
             <strong>
-              <SafetyCertificateOutlined/> {t('Health')}
+              <SafetyCertificateOutlined/> {t('management.servApps.container.overview.healthTitle')}
             </strong>
             <div style={info}>{healthStatus}</div>
-            <strong><SettingOutlined /> {t('Settings')} {State.Status !== 'running' ? t('StartContainer') : ''}</strong>
+            <strong><SettingOutlined /> {t('management.servApps.container.overview.settingsTitle')} {State.Status !== 'running' ? t('management.servApps.startToEditInfo') : ''}</strong>
             {/* <Stack style={{ fontSize: '80%' }} direction={"row"} alignItems="center">
               <Checkbox
                 checked={Config.Labels['cosmos-force-network-secured'] === 'true'}
@@ -174,7 +174,7 @@ const ContainerOverview = ({ containerInfo, config, refresh, updatesAvailable, s
                     }, 3000);
                   })
                 }}
-              /> {t('AutoUpdateContainer')}
+              /> {t('management.servApps.autoUpdateCheckbox')}
             </Stack>
             <strong><NodeExpandOutlined /> URLs</strong>
             <div>
@@ -183,7 +183,7 @@ const ContainerOverview = ({ containerInfo, config, refresh, updatesAvailable, s
               })}
               <br />
               <Chip 
-                label={t('New')}
+                label={t('management.servApps.newChip.newLabel')}
                 color="primary"
                 style={{paddingRight: '4px', margin: '5px'}}
                 deleteIcon={<PlusCircleOutlined />}
@@ -195,7 +195,7 @@ const ContainerOverview = ({ containerInfo, config, refresh, updatesAvailable, s
                 }}
               />
             </div>
-            <strong><DashboardOutlined /> {t('Monitoring')}</strong>
+            <strong><DashboardOutlined /> {t('menu-items.navigation.monitoringTitle')}</strong>
               <div style={{ width: '96%' }}>
                 <MiniPlotComponent agglo metrics={[
                   "cosmos.system.docker.cpu." + Name.replace('/', ''),

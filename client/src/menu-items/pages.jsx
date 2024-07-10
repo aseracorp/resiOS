@@ -13,12 +13,12 @@ const icons = {
 
 const pages = {
     id: 'management',
-    title: 'Management',
+    title: 'menu-items.managementTitle',
     type: 'group',
     children: [
         {
             id: 'servapps',
-            title: 'ServApps',
+            title: 'menu-items.management.servApps',
             type: 'item',
             url: '/resios-ui/servapps',
             icon: AppstoreOutlined,
@@ -26,14 +26,14 @@ const pages = {
         },
         {
             id: 'url',
-            title: 'URLs',
+            title: 'menu-items.management.urls',
             type: 'item',
             url: '/resios-ui/config-url',
             icon: icons.NodeExpandOutlined,
         },
         {
             id: 'users',
-            title: 'Users',
+            title: 'menu-items.management.usersTitle',
             type: 'item',
             url: '/resios-ui/config-users',
             icon: icons.ProfileOutlined,
@@ -41,7 +41,7 @@ const pages = {
         },
         {
             id: 'openid',
-            title: 'OpenID',
+            title: 'menu-items.management.openId',
             type: 'item',
             url: '/resios-ui/openid-manage',
             icon: PicLeftOutlined,
@@ -49,7 +49,7 @@ const pages = {
         },
         {
             id: 'cron',
-            title: 'MenuScheduler',
+            title: 'menu-items.management.schedulerTitle',
             type: 'item',
             url: '/resios-ui/cron',
             icon: ClockCircleOutlined,
@@ -57,7 +57,7 @@ const pages = {
         },
         {
             id: 'config',
-            title: 'Configuration',
+            title: 'menu-items.management.configurationTitle',
             type: 'item',
             url: '/resios-ui/config-general',
             icon: icons.SettingOutlined,

@@ -208,7 +208,7 @@ const SMARTDialog = ({disk, OnClose}) => {
       <DialogActions>
           <Button onClick={() => {
               OnClose && OnClose();
-          }}>{t('Close')}</Button>
+          }}>{t('global.close')}</Button>
       </DialogActions>
   </Dialog>;
   }
@@ -226,7 +226,7 @@ const SMARTDialog = ({disk, OnClose}) => {
                   {healthChip(disk) + ' ' + healthStatus(disk, disk.rota ? fullData : []) + '%'}
                 </div>
                 <div>
-                  <InputLabel>{t('Temperature')}</InputLabel>
+                  <InputLabel>{t('global.temperature')}</InputLabel>
                   {(disk.smart && disk.smart.Temperature) ? `${temperatureChip(disk.smart.Temperature)} ${disk.smart.Temperature}°C` : '⚪ ?'}
                 </div>
                 <div style={{maxWidth: '200px'}}>  
@@ -258,7 +258,7 @@ const SMARTDialog = ({disk, OnClose}) => {
                 getKey={(r) => `${r.Id}`}
                 columns={[
                   {
-                    title: t('Name'),
+                    title: t('global.nameTitle'),
                     field: (r) => <Tooltip title={r.def.description}><span><InfoCircleOutlined /> {r.def.display_name}</span></Tooltip>, 
                   },
                   {
@@ -280,7 +280,7 @@ const SMARTDialog = ({disk, OnClose}) => {
       <DialogActions>
           <Button onClick={() => {
               OnClose && OnClose();
-          }}>{t('Close')}</Button>
+          }}>{t('global.close')}</Button>
       </DialogActions>
   </Dialog>
 };

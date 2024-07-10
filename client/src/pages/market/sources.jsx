@@ -88,7 +88,7 @@ const EditSourcesModal = ({ onSave }) => {
         }
 
         if (source.Name === '') {
-          errors[`sources.${index}.Name`] = t('NameIsRequired');
+          errors[`sources.${index}.Name`] = t('global.name.validation');
         }
         if (source.Url === '') {
           errors[`sources.${index}.Url`] = t('URLRequired');
@@ -114,8 +114,8 @@ const EditSourcesModal = ({ onSave }) => {
         <DialogContent>
           <Stack spacing={2}>
             <Alert severity="info" style={{ margin: '0 20px 20px 20px' }}>
-              {t('InfoSources1')} <br />
-              {t('InfoSources2')}  <a href="https://github.com/azukaar/awesome-cosmos-cloud" target="_blank">{t('InfoSources3')}</a>
+              {t('navigation.market.newSources.additionalMarketsInfo')} <br />
+              {t('navigation.market.newSources.additionalMarketsInfo.moreInfo')}  <a href="https://github.com/azukaar/awesome-cosmos-cloud" target="_blank">{t('navigation.market.newSources.additionalMarketsInfo.href')}</a>
             </Alert>
             {formik.values.sources && formik.values.sources
             .map((action, index) => {
@@ -170,13 +170,13 @@ const EditSourcesModal = ({ onSave }) => {
                   },
                 ]);
               }}>
-              {t('AddSource')}
+              {t('navigation.market.sources.addSourceButton')}
             </Button>
           </Stack>
         </DialogContent>
         <DialogActions>
-          <Button onClick={() => setOpen(false)}>{t('Cancel')}</Button>
-          <Button variant='contained' type="submit" disabled={formik.isSubmitting || !formik.isValid}>{t('Save')}</Button>
+          <Button onClick={() => setOpen(false)}>{t('global.cancelAction')}</Button>
+          <Button variant='contained' type="submit" disabled={formik.isSubmitting || !formik.isValid}>{t('global.saveAction')}</Button>
         </DialogActions>
       </form>
       </FormikProvider>}
@@ -187,7 +187,7 @@ const EditSourcesModal = ({ onSave }) => {
       variant="outlined"
       startIcon={<ContainerOutlined />}
       onClick={() => setOpen(true)}
-    >{t('Sources')}</ResponsiveButton>
+    >{t('navigation.market.sources.editSourcesButton')}</ResponsiveButton>
     </>
   );
 };

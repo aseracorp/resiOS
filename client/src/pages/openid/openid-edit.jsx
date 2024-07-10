@@ -59,7 +59,7 @@ const OpenIdEditModal = ({ clientId, openNewModal, setOpenNewModal, config, onSu
                       fullWidth
                       id="redirect"
                       name="redirect"
-                      label={t('Redirect')}
+                      label={t('management.openId.redirect')}
                       value={formik.values.redirect}
                       onChange={formik.handleChange}
                       error={formik.touched.redirect && Boolean(formik.errors.redirect)}
@@ -74,10 +74,10 @@ const OpenIdEditModal = ({ clientId, openNewModal, setOpenNewModal, config, onSu
                     return <div>{err}</div>
                   })}</Alert>
                 </Stack>}
-                <Button onClick={() => setOpenNewModal(false)}>{t('Cancel')}</Button>
+                <Button onClick={() => setOpenNewModal(false)}>{t('global.cancelAction')}</Button>
                 <Button color="primary" variant="contained" type="submit" onClick={() => {
                   formik.handleSubmit();
-                }}>{clientId ? t('Edit') : t('Create')}</Button>
+                }}>{clientId ? t('global.edit') : t('global.action.create')}</Button>
               </DialogActions>
             </>}
           </form>

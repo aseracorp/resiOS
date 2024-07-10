@@ -203,7 +203,7 @@ const Notification = () => {
                         >
                             <ClickAwayListener onClickAway={handleClose}>
                                 <MainCard
-                                    title={t('Notification')}
+                                    title={t('header.notificationTitle')}
                                     elevation={0}
                                     border={false}
                                     content={false}

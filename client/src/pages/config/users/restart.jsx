@@ -47,7 +47,7 @@ const RestartModal = ({openModal, setOpenModal, config, newRoute }) => {
     return config ? (<>
         {needsRefresh && <>
             <Dialog open={openModal} onClose={() => setOpenModal(false)}>
-                <DialogTitle>{t('Refresh Page')}</DialogTitle>
+                <DialogTitle>{t('RefreshPage')}</DialogTitle>
                 <DialogContent>
                     <DialogContentText>
                         {t('RefreshSelfSignedCert')} {isNotDomain && t('RefreshNotUsingDomain')}
@@ -56,7 +56,7 @@ const RestartModal = ({openModal, setOpenModal, config, newRoute }) => {
                 <DialogActions>
                     <Button onClick={() => {
                         window.location.reload(true);                
-                    }}>{t('Refresh')}</Button>
+                    }}>{t('global.refresh')}</Button>
                 </DialogActions>
             </Dialog>
         </>}
@@ -104,7 +104,7 @@ const RestartModal = ({openModal, setOpenModal, config, newRoute }) => {
                     setTimeout(() => {
                         setWarn(true);
                     }, 20000)
-                }}>{t('Restart')}</Button>
+                }}>{t('management.servapps.actionBar.restart')}</Button>
             </DialogActions>}
         </Dialog>
     </>);

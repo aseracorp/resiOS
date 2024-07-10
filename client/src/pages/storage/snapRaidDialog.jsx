@@ -66,7 +66,7 @@ const SnapRAIDDialogInternal = ({ refresh, open, setOpen, data = {}}) => {
           <FormikProvider value={formik}>
             <form onSubmit={formik.handleSubmit}>
             <DialogTitle>
-              {data.Name ? (t('Edit') + " "+ data.Name) : t('CreateParityDisks')}
+              {data.Name ? (t('global.edit') + " "+ data.Name) : t('CreateParityDisks')}
             </DialogTitle>
                 <DialogContent>
                   <DialogContentText>
@@ -156,7 +156,7 @@ const SnapRAIDDialogInternal = ({ refresh, open, setOpen, data = {}}) => {
                           helperText={formik.touched.syncCronTab && formik.errors.syncCronTab}
                         />
                         <FormLabel>
-                          {crontabToText(formik.values.syncCronTab)}
+                          {crontabToText(formik.values.syncCronTab, t)}
                         </FormLabel>
                         <TextField
                           fullWidth
@@ -169,18 +169,18 @@ const SnapRAIDDialogInternal = ({ refresh, open, setOpen, data = {}}) => {
                           helperText={formik.touched.scrubCronTab && formik.errors.scrubCronTab}
                         />
                         <FormLabel>
-                          {crontabToText(formik.values.scrubCronTab)}
+                          {crontabToText(formik.values.scrubCronTab, t)}
                         </FormLabel>
                       </Stack>
                     </Stack>
                   </DialogContentText>
                 </DialogContent>
                 <DialogActions>
-                  <Button onClick={() => setOpen(false)}>{t('Cancel')}</Button>
+                  <Button onClick={() => setOpen(false)}>{t('global.cancelAction')}</Button>
                   <LoadingButton color="primary" variant="contained" type="submit" onClick={() => {
                     formik.handleSubmit();
                   }}>
-                    {data.Name ? t('Update') : t('Create')}
+                    {data.Name ? t('Update') : t('global.action.create')}
                   </LoadingButton>
                 </DialogActions>
             </form>
@@ -203,7 +203,7 @@ const SnapRAIDDialog = ({ refresh, data }) => {
         size="small"
         startIcon={<PlusCircleOutlined />}
       >{t('NewParityDisks')}</ResponsiveButton> :
-      <div onClick={() => setOpen(true)}>{t('Edit')}</div>}
+      <div onClick={() => setOpen(true)}>{t('global.edit')}</div>}
     </div>
   </>
 }

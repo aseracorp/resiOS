@@ -94,17 +94,17 @@ const NewInstall = () => {
         if(hostname.match(hostnameIsDomainReg)) {
             return [
                 ["", "Select an option"],
-                ["LETSENCRYPT", t('SSLLetsEncrypt')],
-                ["SELFSIGNED", t('SSLSelfSigned')],
-                ["PROVIDED", t('SSLProvided')],
-                ["DISABLED", t('SSLDisabled')],
+                ["LETSENCRYPT", t('management.configuration.security.encryption.httpsCertSelection.sslLetsEncryptChoice')],
+                ["SELFSIGNED", t('management.configuration.security.encryption.httpsCertSelection.sslSelfSignedChoice')],
+                ["PROVIDED", t('management.configuration.security.encryption.httpsCertSelection.sslProvidedChoice')],
+                ["DISABLED", t('management.configuration.security.encryption.httpsCertSelection.sslDisabledChoice')],
             ]
         } else {
             return [
                 ["", t('SelectOption')],
-                ["SELFSIGNED", t('SSLLetsEncrypt')],
-                ["PROVIDED", t('SSLProvided')],
-                ["DISABLED", t('SSLDisabled')],
+                ["SELFSIGNED", t('management.configuration.security.encryption.httpsCertSelection.sslSelfSignedChoice')],
+                ["PROVIDED", t('management.configuration.security.encryption.httpsCertSelection.sslProvidedChoice')],
+                ["DISABLED", t('management.configuration.security.encryption.httpsCertSelection.sslDisabledChoice')],
             ]
         }
     }
@@ -395,7 +395,7 @@ const NewInstall = () => {
                                 </Trans></Alert>
                             )}
                             <DnsChallengeComp 
-                                label={t('DNSChallengeProvider')}
+                                label={t('management.configuration.security.encryption.sslLetsEncryptDnsSelection.sslLetsEncryptDnsLabel')}
                                 name="DNSChallengeProvider"
                                 configName="DNSChallengeConfig"
                                 formik={formik}
@@ -445,8 +445,8 @@ const NewInstall = () => {
                         {formik.values.HTTPSCertificateMode != "" && (formik.values.HTTPSCertificateMode != "DISABLED" || isDomain(formik.values.Hostname)) ? (
                         <Grid item xs={12}>
                         <CosmosCheckbox 
-                            label={<span>{t('AllowHTTPLocalIPAccess')} &nbsp;
-                            <Tooltip title={<span style={{fontSize:'110%'}}><Trans i18nKey="AllowHTTPLocalIPAccessTitle">
+                            label={<span>{t('management.configuration.http.allowInsecureLocalAccessCheckbox.allowInsecureLocalAccessLabel')} &nbsp;
+                            <Tooltip title={<span style={{fontSize:'110%'}}><Trans i18nKey="management.configuration.http.allowInsecureLocalAccessCheckbox.allowInsecureLocalAccessTooltip">
                                 When HTTPS is used along side a domain, depending on your networking configuration, it is possible that your server is not receiving direct local connections. <br />
                                 This option allows you to also access your Cosmos admin using your local IP address, like ip:port. <br />
                                 You can already create ip:port URLs for your apps, <strong>but this will make them HTTP-only</strong>.</Trans></span>}>
@@ -455,7 +455,7 @@ const NewInstall = () => {
                             name="allowHTTPLocalIPAccess"
                             formik={formik}
                         />
-                        {formik.values.allowHTTPLocalIPAccess && <Alert severity="warning"><Trans i18nKey="AllowHTTPLocalIPAccessAlert">
+                        {formik.values.allowHTTPLocalIPAccess && <Alert severity="warning"><Trans i18nKey="management.configuration.http.allowInsecureLocalAccessCheckbox.allowInsecureLocalAccessWarning">
                         This option is not recommended as it exposes your server to security risks on your local network. <br />
                         Your local network is safer than the internet, but not safe, as devices like IoTs, smart-TVs, smartphones or even your router can be compromised. <br />
                         <strong>If you want to have a secure offline / local-only access to a server that uses a domain name and HTTPS, use Constellation instead.</strong>
@@ -553,7 +553,7 @@ const NewInstall = () => {
                             />
                             <CosmosInputText
                                 name="confirmPassword"
-                                label={t('ConfirmPassword')}
+                                label={t('components.confirmPassword')}
                                 placeholder={t('Password')}
                                 formik={formik}
                                 type="password"
@@ -570,7 +570,7 @@ const NewInstall = () => {
                                     color="primary"
                                     disabled={formik.isSubmitting || !formik.isValid}
                                     fullWidth>
-                                    {formik.isSubmitting ? t('Loading') : t('Create')}
+                                    {formik.isSubmitting ? t('Loading') : t('global.action.create')}
                                 </Button>
                             </AnimateButton>
                             </Stack>

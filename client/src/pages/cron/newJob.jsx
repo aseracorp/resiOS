@@ -82,7 +82,7 @@ const NewJobDialog = ({job, OnClose, refresh}) => {
     }}>
       <FormikProvider value={formik}>
         <form onSubmit={formik.handleSubmit}>
-          <DialogTitle>{t('JobEdit')}{isEdit ? t('Edit'): t('Add')}{t('EditJob')}</DialogTitle>
+          <DialogTitle>{t('JobEdit')}{isEdit ? t('global.edit'): t('Add')}{t('EditJob')}</DialogTitle>
           <DialogContent>
               <DialogContentText>
                 <Stack spacing={2} style={{ marginTop: '10px', width: '500px', maxWidth: '100%' }}>
@@ -110,7 +110,7 @@ const NewJobDialog = ({job, OnClose, refresh}) => {
                     error={formik.touched.Crontab && Boolean(formik.errors.Crontab)}
                     helperText={formik.touched.Crontab && formik.errors.Crontab}
                   />
-                  <InputLabel>{crontabToText(formik.values.Crontab)}</InputLabel>
+                  <InputLabel>{crontabToText(formik.values.Crontab, t)}</InputLabel>
 
                   <TextField
                     fullWidth
@@ -139,7 +139,7 @@ const NewJobDialog = ({job, OnClose, refresh}) => {
           <DialogActions>
               <Button onClick={() => {
                   OnClose && OnClose();
-              }}>{t('Close')}</Button>
+              }}>{t('global.close')}</Button>
               <LoadingButton color="primary" variant="contained" type="submit" onClick={() => {
                 formik.handleSubmit();
               }}>{t('Submit')}</LoadingButton>

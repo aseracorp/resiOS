@@ -51,7 +51,7 @@ export const StorageMounts = () => {
           <ResponsiveButton startIcon={<PlusCircleOutlined />} variant="contained" onClick={() => setMountDialog({data: null, unmount: false})}>{t('NewMount')}</ResponsiveButton>,
           <ResponsiveButton variant="outlined" startIcon={<ReloadOutlined />} onClick={() => {
             refresh();
-          }}>{t('Refresh')}</ResponsiveButton>
+          }}>{t('global.refresh')}</ResponsiveButton>
         ]}
         columns={[
           {
@@ -79,7 +79,7 @@ export const StorageMounts = () => {
                     <ListItemIcon>
                       <EditOutlined fontSize="small" />
                     </ListItemIcon>
-                    <ListItemText >{t('Edit')}</ListItemText>
+                    <ListItemText >{t('global.edit')}</ListItemText>
                   </MenuItem>
                   <MenuItem disabled={loading} onClick={() => setMountDialog({data: r, unmount: true})}>
                     <ListItemIcon>

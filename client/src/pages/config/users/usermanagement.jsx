@@ -99,7 +99,7 @@ const UserManagement = () => {
                 <Button onClick={() => {
                     setOpenInviteForm(false);
                     refresh();
-                }}>{t('Close')}</Button>
+                }}>{t('global.close')}</Button>
             </DialogActions>
         </Dialog>: ''}
 
@@ -111,14 +111,14 @@ const UserManagement = () => {
                 </DialogContentText>
             </DialogContent>
             <DialogActions>
-                <Button onClick={() => setOpenDeleteForm(false)}>{t('Cancel')}</Button>
+                <Button onClick={() => setOpenDeleteForm(false)}>{t('global.cancelAction')}</Button>
                 <Button onClick={() => {
                     API.users.deleteUser(toAction)
                     .then(() => {
                         refresh();
                         setOpenDeleteForm(false);
                     })
-                }}>{t('Delete')}</Button>
+                }}>{t('global.delete')}</Button>
             </DialogActions>
         </Dialog>
         
@@ -147,7 +147,7 @@ const UserManagement = () => {
                         setOpenEditEmail(false);
                         refresh();
                     });
-                }}>{t('Edit')}</Button>
+                }}>{t('global.edit')}</Button>
             </DialogActions>
         </Dialog>
 
@@ -194,10 +194,10 @@ const UserManagement = () => {
 
         <Button variant="contained" color="primary" startIcon={<SyncOutlined />} onClick={() => {
                 refresh();
-        }}>{t('Refresh')}</Button>&nbsp;&nbsp;
+        }}>{t('global.refresh')}</Button>&nbsp;&nbsp;
         <Button variant="contained" color="primary" startIcon={<PlusCircleOutlined />} onClick={() => {
             setOpenCreateForm(true)
-        }}>{t('Create')}</Button><br /><br />
+        }}>{t('global.action.create')}</Button><br /><br />
 
 
         {isLoading && <center><br /><CircularProgress /></center>}
@@ -246,7 +246,7 @@ const UserManagement = () => {
                     field: (r) => r.email,
                 },
                 {
-                    title: t('CreatedAt'),
+                    title: t('global.createdAt'),
                     screenMin: 'lg',
                     field: (r) => new Date(r.createdAt).toLocaleString(),
                 },
@@ -255,7 +255,7 @@ const UserManagement = () => {
                     screenMin: 'lg', 
                     field: (r) => {
                         const hasLastLogin = new Date(r.lastLogin).getTime() > 0;
-                        return <>{hasLastLogin ? new Date(r.lastLogin).toLocaleString() : t('Never')}</>
+                        return <>{hasLastLogin ? new Date(r.lastLogin).toLocaleString() : t('global.never')}</>
                     },
                 },
                 {
@@ -289,7 +289,7 @@ const UserManagement = () => {
                                 setToAction(r.nickname);
                                 setOpenDeleteForm(true);
                             }
-                        }>{t('Delete')}</Button>
+                        }>{t('global.delete')}</Button>
                         &nbsp;&nbsp;<Button variant="contained" color="error" onClick={
                             () => {
                                 setLoadingRow(r.nickname);

@@ -256,7 +256,7 @@ const NetworkContainerSetup = ({ config, containerInfo, refresh, newContainer, O
                   </div>
                 </Stack>
               </MainCard>
-              <MainCard title={t('Networks')}>
+              <MainCard title={t('global.networks')}>
                 <Stack spacing={2}>
 
                 {networks && <Stack spacing={2}>

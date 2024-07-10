@@ -73,7 +73,7 @@ const ApiModal = ({ callback, label }) => {
                   loading={loading}
               onClick={() => {   
                   getContent();         
-              }}>{t('Refresh')}</LoadingButton>
+              }}>{t('global.refresh')}</LoadingButton>
               <Button onClick={() => {
                   setOpenModal(false);           
               }}>Close</Button>

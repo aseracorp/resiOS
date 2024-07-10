@@ -154,7 +154,7 @@ const MFASetup = () => {
       </Grid>
       <Grid item xs={12}>
         <Link to="/resios-ui/logout">
-          <Typography variant="h5">{t('Logout')}</Typography>
+          <Typography variant="h5">{t('global.logout')}</Typography>
         </Link>
       </Grid>
     </Grid>

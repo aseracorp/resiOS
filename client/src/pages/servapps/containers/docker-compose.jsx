@@ -647,7 +647,7 @@ const DockerComposeImport = ({ refresh, dockerComposeInit, installerInit, defaul
 
   return <>
     <Dialog open={openModal} onClose={() => setOpenModal(false)} fullWidth maxWidth={'sm'}>
-      <DialogTitle>{installer ? t('Installation') : t('ImportComposeFile')}</DialogTitle>
+      <DialogTitle>{installer ? t('management.servapps.compose.installTitle') : t('management.servapps.importComposeFileButton')}</DialogTitle>
       <DialogContent style={{ width: '100%' }}>
         <DialogContentText>
           {step === 0 && !installer && <><Stack spacing={2}>
@@ -820,7 +820,7 @@ const DockerComposeImport = ({ refresh, dockerComposeInit, installerInit, defaul
                       noCard
                       installer
                     />
-                    <CosmosFormDivider title={t('Volumes')} />
+                    <CosmosFormDivider title={t('management.servapps.networks.volumes')} />
                     <VolumeContainerSetup
                       newContainer
                       frozenVolumes={service['cosmos-installer'] && service['cosmos-installer']['frozen-volumes'] || []}
@@ -886,7 +886,7 @@ const DockerComposeImport = ({ refresh, dockerComposeInit, installerInit, defaul
           setContext({});
           setHostnames({});
           setOverrides({});
-        }}>{t('Close')}</Button>
+        }}>{t('global.close')}</Button>
         <Button disabled={!dockerCompose || ymlError || hostnameErrors()} onClick={() => {
           if (step === 0) {
             setStep(1);
@@ -908,7 +908,7 @@ const DockerComposeImport = ({ refresh, dockerComposeInit, installerInit, defaul
       variant={(installerInit ? "contained" : "outlined")}
       startIcon={(installerInit ? <ArrowDownOutlined /> : <ArrowUpOutlined />)}
     >
-      {installerInit ? t('Install') : t('ImportComposeFile')}
+      {installerInit ? t('management.servapps.compose.installButton') : t('management.servapps.importComposeFileButton')}
     </ResponsiveButton>
     
   </>;

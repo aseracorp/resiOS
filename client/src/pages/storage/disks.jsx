@@ -240,7 +240,7 @@ export const StorageDisks = () => {
       <div>
         <ResponsiveButton variant="outlined" startIcon={<ReloadOutlined />} onClick={() => {
             refresh();
-        }}>{t('Refresh')}</ResponsiveButton>
+        }}>{t('global.refresh')}</ResponsiveButton>
       </div>
       <div>
       <TreeView
