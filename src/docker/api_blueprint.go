@@ -509,14 +509,10 @@ func CreateService(serviceRequest DockerServiceCreateRequest, OnLog func(string)
 		
 		if container.Command != "" {
 			containerConfig.Cmd = strings.Fields(container.Command)
-		} else if container.Commands != "" {
-			containerConfig.Cmd = container.Commands
 		}
 
 		if container.Entrypoint != "" {
 			containerConfig.Entrypoint = strslice.StrSlice(strings.Fields(container.Entrypoint))
-		} else if container.Entrypoints != "" {
-			containerConfig.Entrypoint = container.Entrypoints
 		}
 
 		// For Expose / Ports
