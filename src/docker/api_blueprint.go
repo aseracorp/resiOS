@@ -57,7 +57,9 @@ type ContainerCreateRequestContainer struct {
 	StdinOpen      bool              `json:"stdin_open,omitempty"`
 
 	Command string `json:"command,omitempty"`
+	Commands []string `json:"commands,omitempty"`
 	Entrypoint string `json:"entrypoint,omitempty"`
+	Entrypoints []string `json:"entrypoints,omitempty"`
 	WorkingDir string `json:"working_dir,omitempty"`
 	User string `json:"user,omitempty"`
 	UID int `json:"uid,omitempty"`
@@ -507,10 +509,14 @@ func CreateService(serviceRequest DockerServiceCreateRequest, OnLog func(string)
 		
 		if container.Command != "" {
 			containerConfig.Cmd = strings.Fields(container.Command)
+		} else if container.Commands != "" {
+			containerConfig.Cmd = container.Commands
 		}
 
 		if container.Entrypoint != "" {
 			containerConfig.Entrypoint = strslice.StrSlice(strings.Fields(container.Entrypoint))
+		} else if container.Entrypoints != "" {
+			containerConfig.Entrypoint = container.Entrypoints
 		}
 
 		// For Expose / Ports
