@@ -716,10 +716,11 @@ func CreateService(serviceRequest DockerServiceCreateRequest, OnLog func(string)
 
 		for _, device := range container.Devices {
 			deviceSplit := strings.Split(device, ":")
+			if deviceSplit[2] == "" { deviceSplit[2]="rwm" }
 			devices = append(devices, conttype.DeviceMapping{
 				PathOnHost:        deviceSplit[0],
 				PathInContainer:   deviceSplit[1],
-				CgroupPermissions: "rwm", // This can be "r", "w", "m", or any combination
+				CgroupPermissions: deviceSplit[2], // This can be "r", "w", "m", or any combination
 			})
 		}
 

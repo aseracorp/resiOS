@@ -85,15 +85,20 @@ func UpdateContainerRoute(w http.ResponseWriter, req *http.Request) {
 			for _, device := range form.Devices {
 				deviceHost := strings.Split(device, ":")[0]
 				deviceCont := deviceHost
+				deviceCgroup := "rwm"
 
 				if strings.Contains(device, ":") {
 					deviceCont = strings.Split(device, ":")[1]
 				}
 
+				if strings.Split(device, ":")[2] != "" {
+					deviceCgroup = strings.Split(device, ":")[2]
+				}
+
 				container.HostConfig.Devices = append(container.HostConfig.Devices, containerType.DeviceMapping{
 					PathOnHost:        deviceHost,
 					PathInContainer:   deviceCont,
-					CgroupPermissions: "rwm",
+					CgroupPermissions: deviceCgroup,
 				})
 			}
 		}

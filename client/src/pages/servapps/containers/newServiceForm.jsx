@@ -153,7 +153,7 @@ const NewDockerServiceForm = () => {
                   return {
                     PathOnHost: device.split(':')[0],
                     PathInContainer: device.split(':')[1],
-                    CgroupPermissions: 'rwm',
+                    CgroupPermissions: device.split?.(':')?.[2] || 'rwm',
                   };
                 }),
                 RestartPolicy: {
