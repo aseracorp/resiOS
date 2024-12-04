@@ -22,6 +22,12 @@ import {
     Button
 } from '@mui/material';
 import dayjs from 'dayjs';
+import localizedFormat from 'dayjs/plugin/localizedFormat'; // import this for localized formatting
+dayjs.extend(localizedFormat);
+import relativeTime from 'dayjs/plugin/relativeTime';
+dayjs.extend(relativeTime);
+import customParseFormat from 'dayjs/plugin/customParseFormat'; // import this if you need to parse custom formats
+dayjs.extend(customParseFormat);
 
 // project import
 import MainCard from '../../../../components/MainCard';
@@ -250,7 +256,7 @@ const Jobs = () => {
                                             }}>
                                             <Typography variant="caption" noWrap >
                                                 {job.LastStarted == '0001-01-01T00:00:00Z' ? t('mgmt.scheduler.list.status.neverRan') : (
-                                                    job.Running ? <span><LoadingOutlined />{` `+t('mgmt.cron.list.state.running')+` ${dayjs(job.LastStarted).fromNow()}`}</span> : t('mgmt.cron.list.state.lastRan')+` ${dayjs(job.LastRun).fromNow()}`
+                                                    job.Running ? <span><LoadingOutlined />{` `+t('mgmt.cron.list.state.running')+` ${dayjs(job.LastStarted, 'YYYY-MM-DDThh:mm:ssZ', true).format('L, LT')}`}</span> : t('mgmt.cron.list.state.lastRan')+` ${dayjs(job.LastRun).fromNow()}`
                                                 )}
                                             </Typography>
                                             </ListItemButton>
